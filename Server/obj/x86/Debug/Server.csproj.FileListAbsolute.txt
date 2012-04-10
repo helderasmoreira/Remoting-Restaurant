@@ -1,0 +1,10 @@
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\bin\Debug\Server.exe.config
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\bin\Debug\Server.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\bin\Debug\Server.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\bin\Debug\OrderMap.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\bin\Debug\OrderMap.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\bin\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\obj\x86\Debug\ResolveAssemblyReference.cache
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\obj\x86\Debug\Server.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Server\obj\x86\Debug\Server.pdb

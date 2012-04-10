@@ -1,0 +1,7 @@
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\bin\Debug\OrderMap.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\bin\Debug\OrderMap.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\bin\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\obj\Debug\ResolveAssemblyReference.cache
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\obj\Debug\OrderMap.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\obj\Debug\OrderMap.pdb
