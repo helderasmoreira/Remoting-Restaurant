@@ -15,6 +15,7 @@ namespace Client
     {
         IOrderMap ordersServer;
         Dictionary<Locations, Dictionary<int, List<Order>>> orders;
+        ClientEventRepeater evRepeater;
        
         public Client()
         {
@@ -22,7 +23,9 @@ namespace Client
             InitializeComponent();
             ordersServer = (IOrderMap)RemoteNew.New(typeof(IOrderMap));
             orders = ordersServer.GetOrders();
-
+            evRepeater = new ClientEventRepeater();
+            evRepeater.clientEvent += new ClientDelegate(NewServerNotification);
+            ordersServer.clientEvent += new ClientDelegate(evRepeater.Repeater);
 
             // dados de teste
             Order o = new Order(1, 1, 1, 1, "teste", OrderStatus.NotStarted, Locations.Bar);
@@ -31,6 +34,52 @@ namespace Client
                 textBox1.Text = textBox1.Text + order.Description;
             
         }
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void NewServerNotification(ClientOperations op, Order order)
+        {
+            switch (op)
+            {
+                case ClientOperations.NewOrder:
+                    NewServerNotification2();
+                    break;
+                case ClientOperations.Started:
+                    NewServerNotification3();
+                    break;
+            } 
+        }
+
+        public void NewServerNotification2()
+        {
+            if (InvokeRequired)
+                Invoke(new MethodInvoker(NewServerNotification2));
+            else
+            {
+                textBox1.Text = textBox1.Text + " Nova ordem ";
+            } 
+        }
+
+        public void NewServerNotification3()
+        {
+            if (InvokeRequired)
+                Invoke(new MethodInvoker(NewServerNotification3));
+            else
+            {
+                textBox1.Text = textBox1.Text + " Ordem Começada ";
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+     
+
     }
 }
 

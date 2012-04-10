@@ -48,19 +48,57 @@ public delegate void WorkerDelegate(WorkerOperations op, Order order);
 
 public interface IOrderMap {
 
+    event ClientDelegate clientEvent;
+
+    event WorkerDelegate barEvent;
+    event WorkerDelegate kitchenEvent;
+
     Dictionary<Locations, Dictionary<int, List<Order>>> GetOrders();
     void AddOrder(Order order);
+    void StartOrder(Order order);
     List<Order> GetOrdersByLocation(Locations location);
     List<Order> GetOrdersByTable(int table);
 
 }
 
-public enum ClientOperations { Order, Checkout };
+public enum ClientOperations { NewOrder, Checkout, Started };
 
-public enum WorkerOperations { Started, Finished };
+public enum WorkerOperations { Started, Finished, New };
 
 public enum OrderStatus { NotStarted, Started, Finished };
 
 public enum Locations { Kitchen, Bar };
+
+public class ClientEventRepeater : MarshalByRefObject
+{
+    public event ClientDelegate clientEvent;
+
+    public override object InitializeLifetimeService()
+    {
+        return null;
+    }
+
+    public void Repeater(ClientOperations op, Order order)
+    {
+        if (clientEvent != null)
+            clientEvent(op, order);
+    }
+}
+
+public class WorkerEventRepeater : MarshalByRefObject
+{
+    public event WorkerDelegate workerEvent;
+
+    public override object InitializeLifetimeService()
+    {
+        return null;
+    }
+
+    public void Repeater(WorkerOperations op, Order order)
+    {
+        if (workerEvent != null)
+            workerEvent(op, order);
+    }
+}
 
 

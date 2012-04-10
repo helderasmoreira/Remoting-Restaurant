@@ -5,3 +5,17 @@
 \\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\obj\Debug\ResolveAssemblyReference.cache
 \\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\obj\Debug\OrderMap.dll
 \\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\OrderMap\obj\Debug\OrderMap.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\ResolveAssemblyReference.cache
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\OrderMap.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\OrderMap.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\bin\Debug\OrderMap.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\bin\Debug\OrderMap.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\bin\Debug\Shared.pdb
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\bin\Debug\OrderMap.dll
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\bin\Debug\OrderMap.pdb
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\bin\Debug\Shared.dll
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\bin\Debug\Shared.pdb
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\OrderMap.dll
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\OrderMap.pdb

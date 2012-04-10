@@ -3,3 +3,13 @@
 \\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Shared\obj\Debug\ResolveAssemblyReference.cache
 \\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Shared\obj\Debug\Shared.dll
 \\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Shared\obj\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\bin\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\obj\Debug\ResolveAssemblyReference.cache
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\obj\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\obj\Debug\Shared.pdb
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\bin\Debug\Shared.dll
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\bin\Debug\Shared.pdb
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\obj\Debug\Shared.dll
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Shared\obj\Debug\Shared.pdb

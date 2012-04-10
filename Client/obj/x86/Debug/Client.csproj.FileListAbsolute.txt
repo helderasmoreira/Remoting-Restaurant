@@ -10,3 +10,27 @@
 \\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Client\obj\x86\Debug\GenerateResource.write.1.tlog
 \\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Client\obj\x86\Debug\Client.exe
 \\hvfs.feupsig.fe.up.pt\users\ei08170\documents\visual studio 2010\Projects\TDIN_T1\Client\obj\x86\Debug\Client.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Client.exe.config
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\Client.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\Client.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Client.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Client.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\Client.Client.resources
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\Client.Properties.Resources.resources
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Client.exe.config
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\Client.exe
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\Client.pdb
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Client.exe
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Client.pdb
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Shared.dll
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\bin\Debug\Shared.pdb
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\Client.Client.resources
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\Client.Properties.Resources.resources
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\GenerateResource.write.1.tlog
