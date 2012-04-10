@@ -28,15 +28,16 @@ namespace Worker
             evRepeater = new WorkerEventRepeater();
             evRepeater.workerEvent += new WorkerDelegate(NewServerNotification);
 
-            if(args[0].Equals("-b"))
+            //if(args[0].Equals("-b"))
                 ordersServer.barEvent += new WorkerDelegate(evRepeater.Repeater);
-            else if(args[0].Equals("-k"))
-                ordersServer.kitchenEvent += new WorkerDelegate(evRepeater.Repeater);
+            //else if(args[0].Equals("-k"))
+             //   ordersServer.kitchenEvent += new WorkerDelegate(evRepeater.Repeater);
         }
 
-        public void NewServerNotification(WorkerOperations op, Order order)
+        public void NewServerNotification(Operations op, Order order)
         {
             NewServerNotification2();
+            textBox1.Text = textBox1.Text + " vou começar a order ";
             ordersServer.StartOrder(order);
         }
 

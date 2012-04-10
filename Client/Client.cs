@@ -27,56 +27,64 @@ namespace Client
             evRepeater.clientEvent += new ClientDelegate(NewServerNotification);
             ordersServer.clientEvent += new ClientDelegate(evRepeater.Repeater);
 
-            // dados de teste
-            Order o = new Order(1, 1, 1, 1, "teste", OrderStatus.NotStarted, Locations.Bar);
-            ordersServer.AddOrder(o);
-            foreach (Order order in ordersServer.GetOrdersByLocation(Locations.Bar))
-                textBox1.Text = textBox1.Text + order.Description;
-            
         }
 
         private void Client_Load(object sender, EventArgs e)
         {
-
+            foreach (Order order in ordersServer.GetOrdersByLocation(Locations.Bar))
+                lbEspera.Items.Add(order.Description);
         }
 
-        public void NewServerNotification(ClientOperations op, Order order)
+        public void NewServerNotification(Operations op, Order order)
         {
             switch (op)
             {
-                case ClientOperations.NewOrder:
-                    NewServerNotification2();
+                case Operations.NewOrder:
+                    NewOrderNotification(order);
                     break;
-                case ClientOperations.Started:
-                    NewServerNotification3();
+                case Operations.Started:
+                    OrderStartedNotification(order);
                     break;
+              
             } 
         }
 
-        public void NewServerNotification2()
+        public void NewOrderNotification(Order order)
         {
-            if (InvokeRequired)
-                Invoke(new MethodInvoker(NewServerNotification2));
-            else
+            if (this.InvokeRequired)
             {
-                textBox1.Text = textBox1.Text + " Nova ordem ";
-            } 
-        }
-
-        public void NewServerNotification3()
-        {
-            if (InvokeRequired)
-                Invoke(new MethodInvoker(NewServerNotification3));
-            else
-            {
-                textBox1.Text = textBox1.Text + " Ordem Começada ";
+                this.Invoke((MethodInvoker)delegate
+                {
+                    NewOrderNotification(order);
+                });
+                return;
             }
+            lbEspera.Items.Add(order.Description);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void OrderStartedNotification(Order order)
         {
-
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    OrderStartedNotification(order);
+                });
+                return;
+            }
+            lbEmPreparacao.Items.Add(order.Description);
+            lbEspera.Items.Remove(order.Description);
         }
+
+
+        private void btnNovoPedido_Click(object sender, EventArgs e)
+        {
+            Order o = new Order(1, 1, 1, 1, ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Bar);
+            
+            ordersServer.AddOrder(o);
+        }
+
+      
 
      
 

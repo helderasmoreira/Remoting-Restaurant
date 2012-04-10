@@ -33,26 +33,32 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
     {
         Console.WriteLine("AddOrder called!");
         orders[order.Location][order.Table].Add(order);
-        NotifyClients(ClientOperations.NewOrder, order);
+        NotifyClients(Operations.NewOrder, order);
 
         switch (order.Location)
         {
             case Locations.Bar:
-                NotifyWorkers(WorkerOperations.New, order, barEvent);
+                NotifyWorkers(Operations.NewOrder, order, barEvent);
                 break;
             case Locations.Kitchen:
-                NotifyWorkers(WorkerOperations.New, order, kitchenEvent);
+                NotifyWorkers(Operations.NewOrder, order, kitchenEvent);
                 break;
         }
-
-        //TODO Notify order.location that an order was added
+ 
     }
 
     public void StartOrder(Order order)
     {
         Console.WriteLine("StartOrder called!");
-        orders[order.Location][order.Table].Add(order);
-        NotifyClients(ClientOperations.Started, order);
+        //TODO change order status to Started
+        NotifyClients(Operations.Started, order);
+    }
+
+    public void EndOrder(Order order)
+    {
+        Console.WriteLine("EndOrder called!");
+        //TODO change order status to Finish
+        NotifyClients(Operations.Started, order);
     }
 
     public List<Order> GetOrdersByLocation(Locations location) 
@@ -68,7 +74,7 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         return l.SelectMany(x => x).ToList();    
     }
 
-    void NotifyClients(ClientOperations op, Order order)
+    void NotifyClients(Operations op, Order order)
     {
         if (clientEvent != null)
         {
@@ -89,7 +95,7 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         }
     }
 
-    void NotifyWorkers(WorkerOperations op, Order order, WorkerDelegate wd)
+    void NotifyWorkers(Operations op, Order order, WorkerDelegate wd)
     {
         if (wd != null)
         {

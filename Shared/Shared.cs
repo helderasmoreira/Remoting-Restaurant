@@ -42,9 +42,9 @@ public class Order {
     }
 }
 
-public delegate void ClientDelegate(ClientOperations op, Order order);
+public delegate void ClientDelegate(Operations op, Order order);
 
-public delegate void WorkerDelegate(WorkerOperations op, Order order);
+public delegate void WorkerDelegate(Operations op, Order order);
 
 public interface IOrderMap {
 
@@ -61,9 +61,7 @@ public interface IOrderMap {
 
 }
 
-public enum ClientOperations { NewOrder, Checkout, Started };
-
-public enum WorkerOperations { Started, Finished, New };
+public enum Operations { NewOrder, Checkout, Started, Finished };
 
 public enum OrderStatus { NotStarted, Started, Finished };
 
@@ -78,7 +76,7 @@ public class ClientEventRepeater : MarshalByRefObject
         return null;
     }
 
-    public void Repeater(ClientOperations op, Order order)
+    public void Repeater(Operations op, Order order)
     {
         if (clientEvent != null)
             clientEvent(op, order);
@@ -94,7 +92,7 @@ public class WorkerEventRepeater : MarshalByRefObject
         return null;
     }
 
-    public void Repeater(WorkerOperations op, Order order)
+    public void Repeater(Operations op, Order order)
     {
         if (workerEvent != null)
             workerEvent(op, order);

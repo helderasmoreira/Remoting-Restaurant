@@ -10,3 +10,12 @@ C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Worker\
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Worker\bin\Debug\Shared.pdb
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Worker\obj\x86\Debug\Worker.exe
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Worker\obj\x86\Debug\Worker.pdb
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\bin\Debug\Shared.dll
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\bin\Debug\Shared.pdb
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.Worker.resources
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.Properties.Resources.resources
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.exe
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.pdb

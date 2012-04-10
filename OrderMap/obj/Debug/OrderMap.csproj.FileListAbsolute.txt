@@ -19,3 +19,10 @@ C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMa
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\OrderMap.dll
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\OrderMap.pdb
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\bin\Debug\OrderMap.dll
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\bin\Debug\OrderMap.pdb
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\bin\Debug\Shared.dll
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\bin\Debug\Shared.pdb
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\obj\Debug\ResolveAssemblyReference.cache
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\obj\Debug\OrderMap.dll
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\obj\Debug\OrderMap.pdb
