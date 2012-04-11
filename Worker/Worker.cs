@@ -16,7 +16,7 @@ namespace Worker
     {
         IOrderMap ordersServer;
         Dictionary<Locations, Dictionary<int, List<Order>>> orders;
-        WorkerEventRepeater evRepeater;
+        OperationEventRepeater evRepeater;
         Locations location;
 
         public Worker(string[] args)
@@ -26,15 +26,19 @@ namespace Worker
             ordersServer = (IOrderMap)RemoteNew.New(typeof(IOrderMap));
             orders = ordersServer.GetOrders();
 
-            evRepeater = new WorkerEventRepeater();
-            evRepeater.workerEvent += new WorkerDelegate(NewServerNotification);
+            evRepeater = new OperationEventRepeater();
+            evRepeater.operationEvent += new OperationDelegate(NewServerNotification);
 
-            //if(args[0].Equals("-b"))
-                ordersServer.barEvent += new WorkerDelegate(evRepeater.Repeater);
-               
+            if (args[0].Equals("-b"))
+            {
+                ordersServer.barEvent += new OperationDelegate(evRepeater.Repeater);
                 this.location = Locations.Bar;
-            //else if(args[0].Equals("-k"))
-             //   ordersServer.kitchenEvent += new WorkerDelegate(evRepeater.Repeater);
+            }
+            else if (args[0].Equals("-k"))
+            {
+                ordersServer.kitchenEvent += new OperationDelegate(evRepeater.Repeater);
+                this.location = Locations.Kitchen;
+            }
         }
 
         public void NewServerNotification(Operations op, Order order)
@@ -43,6 +47,14 @@ namespace Worker
             {
                 case Operations.NewOrder:
                     NewOrderNotification(order);
+                    break;
+
+                //TODO
+                case Operations.Started:
+                    break;
+                case Operations.Finished:
+                    break;
+                default:
                     break;
             } 
  
@@ -58,8 +70,12 @@ namespace Worker
                 });
                 return;
             }
-            lbInPreparation.Items.Add(order.Description);
-            ordersServer.StartOrder(order);
+            
+
+            lbWaitingOrders.Items.Add(order.Id);
+            Thread.Sleep(5000);
+            ordersServer.StartOrder(order.Id);
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -69,17 +85,26 @@ namespace Worker
                 case Locations.Bar:
                     this.Text += "bar";
                     break;
+                case Locations.Kitchen:
+                    this.Text += "kitchen";
+                    break;
                 default:
                     break;
             }
 
             foreach (Order order in ordersServer.GetOrdersByLocation(location))
-                lbWaitingOrders.Items.Add(order.Description);
+                lbWaitingOrders.Items.Add(order.Id);
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            ordersServer.StartOrder(((string)lbWaitingOrders.SelectedItem));
+   
+        }
 
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            ordersServer.EndOrder(((string)lbWaitingOrders.SelectedItem));
         }
     }
 }

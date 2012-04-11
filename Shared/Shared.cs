@@ -7,20 +7,36 @@ using System.Collections;
 [Serializable]
 public class Order {
 
-    int id, table, quantity, price;
+    string id;
+    int table, quantity;
+    double price;
+
+  
     string description;
     OrderStatus status;
     Locations location;
 
-    public Order(int id, int table, int quantity, int price, string description, OrderStatus status, Locations location)
+    public Order(int table, int quantity, double price, string description, OrderStatus status, Locations location)
     {
-        this.id = id;
+        this.id = GenerateId();
         this.table = table;
         this.quantity = quantity;
         this.price = price;
         this.description = description;
         this.status = status;
         this.location = location;
+    }
+
+    public int Quantity
+    {
+        get { return quantity; }
+        set { quantity = value; }
+    }
+
+    public string Id
+    {
+        get { return id; }
+        set { id = value; }
     }
 
     public int Table
@@ -40,25 +56,48 @@ public class Order {
         get { return description; }
         set { description = value; }
     }
+
+    public OrderStatus Status
+    {
+        get { return status; }
+        set { status = value; }
+    }
+
+    public double Price
+    {
+        get { return price; }
+        set { price = value; }
+    }
+
+    public string GenerateId()
+    {
+     long i = 1;
+     foreach (byte b in Guid.NewGuid().ToByteArray())
+     {
+      i *= ((int)b + 1);
+     }
+     return string.Format("{0:x}", i - DateTime.Now.Ticks);
+    }
 }
 
-public delegate void ClientDelegate(Operations op, Order order);
-
-public delegate void WorkerDelegate(Operations op, Order order);
+public delegate void OperationDelegate(Operations op, Order order);
 
 public interface IOrderMap {
 
-    event ClientDelegate clientEvent;
+    event OperationDelegate clientEvent;
 
-    event WorkerDelegate barEvent;
-    event WorkerDelegate kitchenEvent;
+    event OperationDelegate barEvent;
+    event OperationDelegate kitchenEvent;
+    
 
     Dictionary<Locations, Dictionary<int, List<Order>>> GetOrders();
     void AddOrder(Order order);
-    void StartOrder(Order order);
+    void StartOrder(string orderId);
+    void EndOrder(string orderId);
     List<Order> GetOrdersByLocation(Locations location);
     List<Order> GetOrdersByTable(int table);
-    Order GetOrderById(int id);
+    double GetTableCheck(int table);
+    Order GetOrderById(string id);
 
 }
 
@@ -68,9 +107,9 @@ public enum OrderStatus { NotStarted, Started, Finished };
 
 public enum Locations { Kitchen, Bar };
 
-public class ClientEventRepeater : MarshalByRefObject
+public class OperationEventRepeater : MarshalByRefObject
 {
-    public event ClientDelegate clientEvent;
+    public event OperationDelegate operationEvent;
 
     public override object InitializeLifetimeService()
     {
@@ -79,25 +118,8 @@ public class ClientEventRepeater : MarshalByRefObject
 
     public void Repeater(Operations op, Order order)
     {
-        if (clientEvent != null)
-            clientEvent(op, order);
+        if (operationEvent != null)
+            operationEvent(op, order);
     }
 }
-
-public class WorkerEventRepeater : MarshalByRefObject
-{
-    public event WorkerDelegate workerEvent;
-
-    public override object InitializeLifetimeService()
-    {
-        return null;
-    }
-
-    public void Repeater(Operations op, Order order)
-    {
-        if (workerEvent != null)
-            workerEvent(op, order);
-    }
-}
-
 

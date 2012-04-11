@@ -76,6 +76,7 @@
             this.btnEnd.TabIndex = 12;
             this.btnEnd.Text = "end";
             this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // btnStart
             // 
