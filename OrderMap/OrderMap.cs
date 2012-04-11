@@ -61,6 +61,12 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         NotifyClients(Operations.Started, order);
     }
 
+    public Order GetOrderById(int id)
+    {
+        //TODO return order with given id
+        return null;
+    }
+
     public List<Order> GetOrdersByLocation(Locations location) 
     {   
         return orders[location].Values.SelectMany(x => x).ToList();

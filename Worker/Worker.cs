@@ -17,6 +17,7 @@ namespace Worker
         IOrderMap ordersServer;
         Dictionary<Locations, Dictionary<int, List<Order>>> orders;
         WorkerEventRepeater evRepeater;
+        Locations location;
 
         public Worker(string[] args)
         {
@@ -30,29 +31,53 @@ namespace Worker
 
             //if(args[0].Equals("-b"))
                 ordersServer.barEvent += new WorkerDelegate(evRepeater.Repeater);
+               
+                this.location = Locations.Bar;
             //else if(args[0].Equals("-k"))
              //   ordersServer.kitchenEvent += new WorkerDelegate(evRepeater.Repeater);
         }
 
         public void NewServerNotification(Operations op, Order order)
         {
-            NewServerNotification2();
-            textBox1.Text = textBox1.Text + " vou começar a order ";
+            switch (op)
+            {
+                case Operations.NewOrder:
+                    NewOrderNotification(order);
+                    break;
+            } 
+ 
+        }
+
+        public void NewOrderNotification(Order order)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    NewOrderNotification(order);
+                });
+                return;
+            }
+            lbInPreparation.Items.Add(order.Description);
             ordersServer.StartOrder(order);
         }
 
-        public void NewServerNotification2()
+        private void Form1_Load(object sender, EventArgs e)
         {
-            if (InvokeRequired)
-                Invoke(new MethodInvoker(NewServerNotification2));
-            else
+            switch (location)
             {
-                textBox1.Text = textBox1.Text + " Nova ordem de back ";
+                case Locations.Bar:
+                    this.Text += "bar";
+                    break;
+                default:
+                    break;
             }
-           
+
+            foreach (Order order in ordersServer.GetOrdersByLocation(location))
+                lbWaitingOrders.Items.Add(order.Description);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
 
         }

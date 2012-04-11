@@ -58,6 +58,7 @@ public interface IOrderMap {
     void StartOrder(Order order);
     List<Order> GetOrdersByLocation(Locations location);
     List<Order> GetOrdersByTable(int table);
+    Order GetOrderById(int id);
 
 }
 

@@ -28,29 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbDescricao = new System.Windows.Forms.ComboBox();
             this.btnNovoPedido = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbEspera = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbProntos = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbEmPreparacao = new System.Windows.Forms.ListBox();
+            this.lbInPreparation = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbWaitingOrders = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbOrdersReady = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 224);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(460, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // cbDescricao
             // 
@@ -103,51 +95,16 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lbEmPreparacao);
+            this.panel1.Controls.Add(this.lbInPreparation);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lbEspera);
+            this.panel1.Controls.Add(this.lbWaitingOrders);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lbProntos);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.lbOrdersReady);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 69);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(522, 324);
             this.panel1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(142, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "pedidos em espera";
-            // 
-            // lbEspera
-            // 
-            this.lbEspera.FormattingEnabled = true;
-            this.lbEspera.Location = new System.Drawing.Point(142, 43);
-            this.lbEspera.Name = "lbEspera";
-            this.lbEspera.Size = new System.Drawing.Size(120, 95);
-            this.lbEspera.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "pedidos prontos";
-            // 
-            // lbProntos
-            // 
-            this.lbProntos.FormattingEnabled = true;
-            this.lbProntos.Location = new System.Drawing.Point(9, 43);
-            this.lbProntos.Name = "lbProntos";
-            this.lbProntos.Size = new System.Drawing.Size(120, 95);
-            this.lbProntos.TabIndex = 1;
             // 
             // label3
             // 
@@ -158,13 +115,47 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "pedidos a serem feitos";
             // 
-            // lbEmPreparacao
+            // lbInPreparation
             // 
-            this.lbEmPreparacao.FormattingEnabled = true;
-            this.lbEmPreparacao.Location = new System.Drawing.Point(268, 43);
-            this.lbEmPreparacao.Name = "lbEmPreparacao";
-            this.lbEmPreparacao.Size = new System.Drawing.Size(120, 95);
-            this.lbEmPreparacao.TabIndex = 5;
+            this.lbInPreparation.FormattingEnabled = true;
+            this.lbInPreparation.Location = new System.Drawing.Point(268, 43);
+            this.lbInPreparation.Name = "lbInPreparation";
+            this.lbInPreparation.Size = new System.Drawing.Size(120, 95);
+            this.lbInPreparation.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(142, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "pedidos em espera";
+            // 
+            // lbWaitingOrders
+            // 
+            this.lbWaitingOrders.FormattingEnabled = true;
+            this.lbWaitingOrders.Location = new System.Drawing.Point(142, 43);
+            this.lbWaitingOrders.Name = "lbWaitingOrders";
+            this.lbWaitingOrders.Size = new System.Drawing.Size(120, 95);
+            this.lbWaitingOrders.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "pedidos prontos";
+            // 
+            // lbOrdersReady
+            // 
+            this.lbOrdersReady.FormattingEnabled = true;
+            this.lbOrdersReady.Location = new System.Drawing.Point(9, 43);
+            this.lbOrdersReady.Name = "lbOrdersReady";
+            this.lbOrdersReady.Size = new System.Drawing.Size(120, 95);
+            this.lbOrdersReady.TabIndex = 1;
             // 
             // Client
             // 
@@ -185,18 +176,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cbDescricao;
         private System.Windows.Forms.Button btnNovoPedido;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox lbProntos;
+        private System.Windows.Forms.ListBox lbOrdersReady;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lbEspera;
+        private System.Windows.Forms.ListBox lbWaitingOrders;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox lbEmPreparacao;
+        private System.Windows.Forms.ListBox lbInPreparation;
     }
 }
 

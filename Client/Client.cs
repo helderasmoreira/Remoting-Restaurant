@@ -32,7 +32,7 @@ namespace Client
         private void Client_Load(object sender, EventArgs e)
         {
             foreach (Order order in ordersServer.GetOrdersByLocation(Locations.Bar))
-                lbEspera.Items.Add(order.Description);
+                lbWaitingOrders.Items.Add(order.Description);
         }
 
         public void NewServerNotification(Operations op, Order order)
@@ -59,7 +59,7 @@ namespace Client
                 });
                 return;
             }
-            lbEspera.Items.Add(order.Description);
+            lbWaitingOrders.Items.Add(order.Description);
         }
 
         public void OrderStartedNotification(Order order)
@@ -72,15 +72,14 @@ namespace Client
                 });
                 return;
             }
-            lbEmPreparacao.Items.Add(order.Description);
-            lbEspera.Items.Remove(order.Description);
+            lbInPreparation.Items.Add(order.Description);
+            lbWaitingOrders.Items.Remove(order.Description);
         }
 
 
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
             Order o = new Order(1, 1, 1, 1, ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Bar);
-            
             ordersServer.AddOrder(o);
         }
 

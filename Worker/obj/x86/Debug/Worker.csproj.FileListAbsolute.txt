@@ -19,3 +19,6 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateRe
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.exe
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.pdb
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\bin\Debug\Worker.exe.config
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\bin\Debug\Worker.exe
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\bin\Debug\Worker.pdb
