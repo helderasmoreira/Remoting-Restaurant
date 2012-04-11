@@ -57,6 +57,9 @@ namespace Client
                 case Operations.Finished:
                     OrderFinishedNotification(order);
                     break;
+                case Operations.Removed:
+                    OrderRemovedNotification(order);
+                    break;
               
             } 
         }
@@ -79,6 +82,29 @@ namespace Client
             label7.Text = ordersServer.GetTableCheck(order.Table).ToString() + " €";
         }
 
+        public void OrderRemovedNotification(Order order)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    OrderRemovedNotification(order);
+                });
+                return;
+            }
+            
+            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes) 
+            {
+                if (t.Name == order.Id)
+                {
+                    treeView1.Nodes[order.Table - 1].Nodes.Remove(t);
+                    break;
+                }
+            }
+           
+            label7.Text = ordersServer.GetTableCheck(order.Table).ToString() + " €";
+        }
+
         public void OrderStartedNotification(Order order)
         {
             if (this.InvokeRequired)
@@ -88,6 +114,15 @@ namespace Client
                     OrderStartedNotification(order);
                 });
                 return;
+            }
+
+            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+            {
+                if (t.Name == order.Id)
+                {
+                    t.BackColor = Color.Yellow;
+                    break;
+                }
             }
 
         }
@@ -101,6 +136,15 @@ namespace Client
                     OrderFinishedNotification(order);
                 });
                 return;
+            }
+
+            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+            {
+                if (t.Name == order.Id)
+                {
+                    t.BackColor = Color.Green;
+                    break;
+                }
             }
 
         }
@@ -136,7 +180,33 @@ namespace Client
                 label7.Text = ordersServer.GetTableCheck(treeView1.Nodes.IndexOf(e.Node) + 1).ToString() +" €";
             }
         }
-     
+
+        private void btnCloseTable_Click(object sender, EventArgs e)
+        {
+            TreeNode tn = treeView1.SelectedNode;
+
+            if (tn.Parent != null)
+                tn = tn.Parent;
+
+            string value = ordersServer.GetTableCheck(treeView1.Nodes.IndexOf(tn) + 1).ToString() + " €";
+            int ret = ordersServer.CloseTable(treeView1.Nodes.IndexOf(tn) + 1);
+            if(ret == -1)
+                MessageBox.Show("Impossível fechar mesa, pois há pedidos pendentes!", "Fechar Mesa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if(ret == -2)
+                MessageBox.Show("Ainda tem pedidos que não foram começados. Elimine-os primeiro e tente novamente!", "Fechar Mesa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                MessageBox.Show("Mesa fechada com sucesso! Total a pagar: " + value, "Fechar Mesa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void treeView1_AfterSelect_1(object sender, TreeViewEventArgs e)
+        {
+            
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            
+        }
 
     }
 }

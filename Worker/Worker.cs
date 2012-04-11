@@ -48,16 +48,34 @@ namespace Worker
                 case Operations.NewOrder:
                     NewOrderNotification(order);
                     break;
-
-                //TODO
                 case Operations.Started:
+                    StartedOrderNotification(order);
                     break;
                 case Operations.Finished:
+                    FinishedNotification(order);
+                    break;
+                case Operations.Removed:
+                    RemovedNotification(order);
                     break;
                 default:
                     break;
             } 
  
+        }
+
+        public void StartedOrderNotification(Order order)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    StartedOrderNotification(order);
+                });
+                return;
+            }
+
+            lbWaitingOrders.Items.Remove(order.Id);
+            lbInPreparation.Items.Add(order.Id);
         }
 
         public void NewOrderNotification(Order order)
@@ -70,12 +88,41 @@ namespace Worker
                 });
                 return;
             }
-            
+
 
             lbWaitingOrders.Items.Add(order.Id);
-            ordersServer.StartOrder(order.Id);
-            
+
         }
+
+        public void RemovedNotification(Order order)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    RemovedNotification(order);
+                });
+                return;
+            }
+
+            lbWaitingOrders.Items.Remove(order.Id);
+        }
+
+        public void FinishedNotification(Order order)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    FinishedNotification(order);
+                });
+                return;
+            }
+
+            lbInPreparation.Items.Remove(order.Id);
+        }
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -98,12 +145,11 @@ namespace Worker
         private void btnStart_Click(object sender, EventArgs e)
         {
             ordersServer.StartOrder(((string)lbWaitingOrders.SelectedItem));
-   
         }
 
         private void btnEnd_Click(object sender, EventArgs e)
         {
-            ordersServer.EndOrder(((string)lbWaitingOrders.SelectedItem));
+            ordersServer.EndOrder(((string)lbInPreparation.SelectedItem));
         }
     }
 }

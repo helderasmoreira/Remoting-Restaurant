@@ -98,10 +98,11 @@ public interface IOrderMap {
     List<Order> GetOrdersByTable(int table);
     double GetTableCheck(int table);
     Order GetOrderById(string id);
+    int CloseTable(int id);
 
 }
 
-public enum Operations { NewOrder, Checkout, Started, Finished };
+public enum Operations { NewOrder, Checkout, Started, Finished, Removed };
 
 public enum OrderStatus { NotStarted, Started, Finished };
 

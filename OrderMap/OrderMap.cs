@@ -66,6 +66,11 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         order.Status = OrderStatus.Started;
         Console.WriteLine("StartOrder called!");        
         NotifyClients(Operations.Started, order);
+
+        if (order.Location == Locations.Bar)
+            NotifyWorkers(Operations.Started, order, barEvent);
+        else
+            NotifyWorkers(Operations.Started, order, kitchenEvent);
     }
 
     public void EndOrder(string orderId)
@@ -74,6 +79,11 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         order.Status = OrderStatus.Finished;
         Console.WriteLine("EndOrder called!");
         NotifyClients(Operations.Finished, order);
+
+        if (order.Location == Locations.Bar)
+            NotifyWorkers(Operations.Finished, order, barEvent);
+        else
+            NotifyWorkers(Operations.Finished, order, kitchenEvent);
     }
 
     public Order GetOrderById(string id)
@@ -107,6 +117,40 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         foreach (Order o in GetOrdersByTable(table))
             total += o.Price;
         return total;
+    }
+
+    public int CloseTable(int id)
+    {
+        List<Order> orders = GetOrdersByTable(id);
+        int ret = 0;
+        foreach (Order o in orders)
+        {
+            if (o.Status == OrderStatus.Started)
+                return -1;
+            else if (o.Status == OrderStatus.NotStarted)
+                ret = -2;
+        }
+
+        if (ret == 0)
+        {
+            foreach (Order o in orders)
+            {
+                NotifyClients(Operations.Removed, o);
+                if(o.Location == Locations.Bar)
+                    NotifyWorkers(Operations.Removed, o, barEvent);
+                else
+                    NotifyWorkers(Operations.Removed, o, kitchenEvent);
+            }
+            RemoveAllOrdersTable(id);
+        }
+            
+        return ret;
+    }
+
+    void RemoveAllOrdersTable(int id)
+    {
+         orders[Locations.Bar][id].Clear();
+         orders[Locations.Kitchen][id].Clear();
     }
 
     void NotifyClients(Operations op, Order order)
