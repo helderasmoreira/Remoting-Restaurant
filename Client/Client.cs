@@ -74,6 +74,8 @@ namespace Client
             TreeNode tn = new TreeNode(order.Quantity.ToString() + " - " + order.Description);
             tn.BackColor = Color.Red;
             tn.Name = order.Id;
+
+            treeView1.Nodes[order.Table - 1].Nodes.Add(tn);
             label7.Text = ordersServer.GetTableCheck(order.Table).ToString() + " €";
         }
 
@@ -113,7 +115,7 @@ namespace Client
             if (tn.Parent != null)
                 tn = tn.Parent;
 
-            if (cbTipo.SelectedText.Equals("Bar"))
+            if (cbTipo.SelectedItem.Equals("Bar"))
                 o = new Order(treeView1.Nodes.IndexOf(tn) + 1, Convert.ToInt32(tbQuantidade.Text), prices[cbDescricao.SelectedIndex] * Convert.ToDouble(tbQuantidade.Text), ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Bar);
             else
                 o = new Order(treeView1.Nodes.IndexOf(tn) + 1, Convert.ToInt32(tbQuantidade.Text), prices[cbDescricao.SelectedIndex] * Convert.ToDouble(tbQuantidade.Text), ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Kitchen);

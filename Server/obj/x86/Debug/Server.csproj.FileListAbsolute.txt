@@ -38,3 +38,13 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Server\bin\Debug\Shared.dll
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Server\bin\Debug\OrderMap.pdb
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Server\bin\Debug\Shared.pdb
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Server\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\bin\Debug\Server.exe.config
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\obj\x86\Debug\Server.exe
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\obj\x86\Debug\Server.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\bin\Debug\Server.exe
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\bin\Debug\Server.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\bin\Debug\OrderMap.dll
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\bin\Debug\Shared.dll
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\bin\Debug\OrderMap.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\bin\Debug\Shared.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\Server\obj\x86\Debug\ResolveAssemblyReference.cache

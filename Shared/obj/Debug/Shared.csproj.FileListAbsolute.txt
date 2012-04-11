@@ -18,3 +18,8 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Shared\bin\Debug\Shared.pdb
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Shared\obj\Debug\ResolveAssemblyReference.cache
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Shared\obj\Debug\Shared.dll
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Shared\obj\Debug\Shared.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\Shared\bin\Debug\Shared.dll
+C:\Users\Babo\Desktop\Remoting-Restaurant\Shared\bin\Debug\Shared.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\Shared\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Babo\Desktop\Remoting-Restaurant\Shared\obj\Debug\Shared.dll
+C:\Users\Babo\Desktop\Remoting-Restaurant\Shared\obj\Debug\Shared.pdb

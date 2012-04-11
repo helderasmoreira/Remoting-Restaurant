@@ -73,7 +73,6 @@ namespace Worker
             
 
             lbWaitingOrders.Items.Add(order.Id);
-            Thread.Sleep(5000);
             ordersServer.StartOrder(order.Id);
             
         }
