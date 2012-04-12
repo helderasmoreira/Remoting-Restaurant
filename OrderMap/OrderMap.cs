@@ -147,6 +147,23 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         return ret;
     }
 
+    public void RemoveOrderById(string id)
+    {
+        foreach (Dictionary<int, List<Order>> location in orders.Values)
+            foreach (List<Order> table in location.Values)
+                foreach (Order o in table)
+                    if (o.Id.Equals(id))
+                    {
+                        table.Remove(o);
+                        NotifyClients(Operations.Removed, o);
+                        if (o.Location == Locations.Bar)
+                            NotifyWorkers(Operations.Removed, o, barEvent);
+                        else
+                            NotifyWorkers(Operations.Removed, o, kitchenEvent);
+                        return;
+                    }
+    }
+
     void RemoveAllOrdersTable(int id)
     {
          orders[Locations.Bar][id].Clear();

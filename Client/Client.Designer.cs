@@ -46,13 +46,10 @@
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbQuantidade = new System.Windows.Forms.TextBox();
             this.cbDescricao = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.asdasdaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -61,19 +58,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.udQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.eliminarTolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udQuantidade)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNovoPedido
             // 
-            this.btnNovoPedido.Location = new System.Drawing.Point(201, 118);
+            this.btnNovoPedido.Location = new System.Drawing.Point(199, 121);
             this.btnNovoPedido.Name = "btnNovoPedido";
             this.btnNovoPedido.Size = new System.Drawing.Size(123, 23);
             this.btnNovoPedido.TabIndex = 2;
@@ -105,7 +107,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 4);
+            this.label5.Location = new System.Drawing.Point(9, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 9;
@@ -117,15 +119,16 @@
             this.cbTipo.Items.AddRange(new object[] {
             "Cozinha",
             "Bar"});
-            this.cbTipo.Location = new System.Drawing.Point(4, 24);
+            this.cbTipo.Location = new System.Drawing.Point(9, 37);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(119, 21);
             this.cbTipo.TabIndex = 8;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(201, 56);
+            this.label4.Location = new System.Drawing.Point(9, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 7;
@@ -134,18 +137,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 53);
+            this.label2.Location = new System.Drawing.Point(9, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Descrição:";
-            // 
-            // tbQuantidade
-            // 
-            this.tbQuantidade.Location = new System.Drawing.Point(204, 72);
-            this.tbQuantidade.Name = "tbQuantidade";
-            this.tbQuantidade.Size = new System.Drawing.Size(68, 20);
-            this.tbQuantidade.TabIndex = 4;
             // 
             // cbDescricao
             // 
@@ -154,7 +150,7 @@
             "Alheira ",
             "Prego",
             "Bacalhau"});
-            this.cbDescricao.Location = new System.Drawing.Point(7, 72);
+            this.cbDescricao.Location = new System.Drawing.Point(9, 80);
             this.cbDescricao.Name = "cbDescricao";
             this.cbDescricao.Size = new System.Drawing.Size(168, 21);
             this.cbDescricao.TabIndex = 3;
@@ -187,7 +183,6 @@
             // 
             // treeView1
             // 
-            this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
@@ -224,21 +219,6 @@
             treeNode10});
             this.treeView1.Size = new System.Drawing.Size(336, 282);
             this.treeView1.TabIndex = 5;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asdasdaToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // asdasdaToolStripMenuItem
-            // 
-            this.asdasdaToolStripMenuItem.Name = "asdasdaToolStripMenuItem";
-            this.asdasdaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.asdasdaToolStripMenuItem.Text = "asdasda";
             // 
             // panel3
             // 
@@ -260,14 +240,15 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.04546F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.95454F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.71631F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.28369F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(336, 282);
             this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.btnCloseTable);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label7);
@@ -275,7 +256,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(330, 112);
+            this.panel4.Size = new System.Drawing.Size(330, 105);
             this.panel4.TabIndex = 0;
             // 
             // btnCloseTable
@@ -321,18 +302,58 @@
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.udQuantidade);
             this.panel5.Controls.Add(this.btnNovoPedido);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.tbQuantidade);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.cbTipo);
             this.panel5.Controls.Add(this.cbDescricao);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 121);
+            this.panel5.Location = new System.Drawing.Point(3, 114);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(330, 158);
+            this.panel5.Size = new System.Drawing.Size(330, 165);
             this.panel5.TabIndex = 1;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // udQuantidade
+            // 
+            this.udQuantidade.Location = new System.Drawing.Point(12, 120);
+            this.udQuantidade.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.udQuantidade.Name = "udQuantidade";
+            this.udQuantidade.Size = new System.Drawing.Size(62, 20);
+            this.udQuantidade.TabIndex = 10;
+            this.udQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.udQuantidade.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // eliminarTolStripMenuItem
+            // 
+            this.eliminarTolStripMenuItem.Name = "eliminarTolStripMenuItem";
+            this.eliminarTolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(142, 26);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // Client
             // 
@@ -347,13 +368,14 @@
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udQuantidade)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -364,8 +386,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem asdasdaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarTolStripMenuItem;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbDescricao;
@@ -380,8 +401,10 @@
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbQuantidade;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown udQuantidade;
       
     }
 }

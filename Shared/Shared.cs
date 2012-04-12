@@ -99,6 +99,7 @@ public interface IOrderMap {
     double GetTableCheck(int table);
     Order GetOrderById(string id);
     int CloseTable(int id);
+    void RemoveOrderById(string id);
 
 }
 

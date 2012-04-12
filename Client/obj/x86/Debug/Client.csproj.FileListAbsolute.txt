@@ -46,7 +46,6 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.Cli
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.Properties.Resources.resources
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\GenerateResource.write.1.tlog
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.exe.licenses
 C:\Users\Babo\Desktop\Remoting-Restaurant\Client\bin\Debug\Client.exe.config
 C:\Users\Babo\Desktop\Remoting-Restaurant\Client\obj\x86\Debug\Client.exe
 C:\Users\Babo\Desktop\Remoting-Restaurant\Client\obj\x86\Debug\Client.pdb
