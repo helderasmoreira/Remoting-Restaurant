@@ -10,14 +10,14 @@ public class Order {
     string id;
     int table, quantity;
     double price;
-
-  
+    DateTime time;
     string description;
     OrderStatus status;
     Locations location;
 
-    public Order(int table, int quantity, double price, string description, OrderStatus status, Locations location)
+    public Order(DateTime time, int table, int quantity, double price, string description, OrderStatus status, Locations location)
     {
+        this.time = time;
         this.id = GenerateId();
         this.table = table;
         this.quantity = quantity;
@@ -25,6 +25,12 @@ public class Order {
         this.description = description;
         this.status = status;
         this.location = location;
+    }
+
+    public DateTime Time
+    {
+        get { return time; }
+        set { time = value; }
     }
 
     public int Quantity
@@ -98,6 +104,7 @@ public interface IOrderMap {
     List<Order> GetOrdersByTable(int table);
     double GetTableCheck(int table);
     Order GetOrderById(string id);
+    string GetTableTime(int id);
     int CloseTable(int id);
     void RemoveOrderById(string id);
 

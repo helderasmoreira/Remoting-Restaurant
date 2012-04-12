@@ -36,9 +36,6 @@ namespace Client
 
         private void Client_Load(object sender, EventArgs e)
         {
-            //foreach (Order order in ordersServer.GetOrdersByLocation(Locations.Bar))
-              //  lbWaitingOrders.Items.Add(order.Id);
-
             pricesKitchen = new double[] { 4.50, 4.00, 6.00, 7.25 };
             pricesBar = new double[] { 5.00, 1.50, 1.00, 3.50 };
             kitchen = new string[] {"Alheira de Mirandela", "Costeleta Grelhada", "Espetada de Porco", "Bife de Frango"};
@@ -46,6 +43,29 @@ namespace Client
             this.treeView1.SelectedNode = this.treeView1.Nodes[0];
             label1.Text = this.treeView1.Nodes[0].Text;
             label7.Text = "0 €";
+
+            for (int i = 1; i <= 10; i++)
+            {
+                foreach (Order order in ordersServer.GetOrdersByTable(i))
+                {
+                    TreeNode tn = new TreeNode(order.Description);
+                    switch (order.Status)
+                    {
+                        case OrderStatus.Finished:
+                            tn.BackColor = Color.LightGreen;
+                            break;
+                        case OrderStatus.Started:
+                            tn.BackColor = Color.Khaki;
+                            break;
+                        case OrderStatus.NotStarted:
+                            tn.BackColor = Color.IndianRed;
+                            break;
+                    }
+                    tn.Name = order.Id;
+                    treeView1.Nodes[order.Table - 1].Nodes.Add(tn);
+                    treeView1.Nodes[order.Table - 1].Expand();
+                }
+            }
 
             treeView1.AfterSelect += new TreeViewEventHandler(TreeView1_AfterSelect);
             treeView1.MouseDown += new MouseEventHandler(treeView1_mouseDown);
@@ -89,6 +109,7 @@ namespace Client
 
             treeView1.Nodes[order.Table - 1].Expand();
             label7.Text = ordersServer.GetTableCheck(order.Table).ToString() + " €";
+            label3.Text = ordersServer.GetTableTime(order.Table);
         }
 
         public void OrderRemovedNotification(Order order)
@@ -180,9 +201,9 @@ namespace Client
             for (int i = 0; i < udQuantidade.Value; i++)
             {
                 if (cbTipo.SelectedItem.Equals("Bar"))
-                    o = new Order(treeView1.Nodes.IndexOf(tn) + 1, 1, pricesBar[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Bar);
+                    o = new Order(DateTime.Now, treeView1.Nodes.IndexOf(tn) + 1, 1, pricesBar[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Bar);
                 else
-                    o = new Order(treeView1.Nodes.IndexOf(tn) + 1, 1, pricesKitchen[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Kitchen);
+                    o = new Order(DateTime.Now, treeView1.Nodes.IndexOf(tn) + 1, 1, pricesKitchen[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Kitchen);
                 ordersServer.AddOrder(o);
             }
         }
@@ -190,10 +211,20 @@ namespace Client
         private void TreeView1_AfterSelect(System.Object sender,
         System.Windows.Forms.TreeViewEventArgs e)
         {
-            if(e.Node.Parent == null) {
+            if (e.Node.Parent == null)
+            {
                 label1.Text = e.Node.Text;
-                label7.Text = ordersServer.GetTableCheck(treeView1.Nodes.IndexOf(e.Node) + 1).ToString() +" €";
+                label7.Text = ordersServer.GetTableCheck(treeView1.Nodes.IndexOf(e.Node) + 1).ToString() + " €";
+                label3.Text = ordersServer.GetTableTime(treeView1.Nodes.IndexOf(e.Node) + 1);
             }
+            else
+            {
+                label1.Text = e.Node.Parent.Text;
+                label7.Text = ordersServer.GetTableCheck(treeView1.Nodes.IndexOf(e.Node.Parent) + 1).ToString() + " €";
+                label3.Text = ordersServer.GetTableTime(treeView1.Nodes.IndexOf(e.Node.Parent) + 1);
+            }
+
+
         }
 
         private void btnCloseTable_Click(object sender, EventArgs e)
@@ -257,24 +288,6 @@ namespace Client
                 foreach (string s in kitchen)
                     cbDescricao.Items.Add(s);
         }
-
-        private void tbQuantidade_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-   
-
     }
 }
 

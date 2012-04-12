@@ -73,6 +73,17 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
             NotifyWorkers(Operations.Started, order, kitchenEvent);
     }
 
+    public string GetTableTime(int id)
+    {
+        if(orders[Locations.Bar][id].Count() == 0 && orders[Locations.Kitchen][id].Count() == 0) 
+            return " - ";
+        DateTime dt = DateTime.Now;
+        foreach (Order o in GetOrdersByTable(id))
+            if (o.Time.CompareTo(dt) == -1)
+                dt = o.Time;
+        return dt.ToShortTimeString();
+    }
+
     public void EndOrder(string orderId)
     {
         Order order = GetOrderById(orderId);

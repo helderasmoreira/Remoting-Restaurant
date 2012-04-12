@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Mesa 1");
-            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Mesa 2");
-            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Mesa 3");
-            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Mesa 4");
-            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Mesa 5");
-            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Mesa 6");
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Mesa 7");
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Mesa 8");
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Mesa 9");
-            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Mesa 10");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Mesa 1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Mesa 2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Mesa 3");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Mesa 4");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Mesa 5");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Mesa 6");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Mesa 7");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Mesa 8");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Mesa 9");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Mesa 10");
             this.btnNovoPedido = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,6 +53,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnCloseTable = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -103,7 +105,6 @@
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 3;
             this.label8.Text = "Sala";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label5
             // 
@@ -183,37 +184,37 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode51.Name = "Node0";
-            treeNode51.Text = "Mesa 1";
-            treeNode52.Name = "Node1";
-            treeNode52.Text = "Mesa 2";
-            treeNode53.Name = "Node2";
-            treeNode53.Text = "Mesa 3";
-            treeNode54.Name = "Node3";
-            treeNode54.Text = "Mesa 4";
-            treeNode55.Name = "Node4";
-            treeNode55.Text = "Mesa 5";
-            treeNode56.Name = "Node5";
-            treeNode56.Text = "Mesa 6";
-            treeNode57.Name = "Node6";
-            treeNode57.Text = "Mesa 7";
-            treeNode58.Name = "Node7";
-            treeNode58.Text = "Mesa 8";
-            treeNode59.Name = "Node8";
-            treeNode59.Text = "Mesa 9";
-            treeNode60.Name = "Node9";
-            treeNode60.Text = "Mesa 10";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "Mesa 1";
+            treeNode2.Name = "Node1";
+            treeNode2.Text = "Mesa 2";
+            treeNode3.Name = "Node2";
+            treeNode3.Text = "Mesa 3";
+            treeNode4.Name = "Node3";
+            treeNode4.Text = "Mesa 4";
+            treeNode5.Name = "Node4";
+            treeNode5.Text = "Mesa 5";
+            treeNode6.Name = "Node5";
+            treeNode6.Text = "Mesa 6";
+            treeNode7.Name = "Node6";
+            treeNode7.Text = "Mesa 7";
+            treeNode8.Name = "Node7";
+            treeNode8.Text = "Mesa 8";
+            treeNode9.Name = "Node8";
+            treeNode9.Text = "Mesa 9";
+            treeNode10.Name = "Node9";
+            treeNode10.Text = "Mesa 10";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode51,
-            treeNode52,
-            treeNode53,
-            treeNode54,
-            treeNode55,
-            treeNode56,
-            treeNode57,
-            treeNode58,
-            treeNode59,
-            treeNode60});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10});
             this.treeView1.Size = new System.Drawing.Size(200, 282);
             this.treeView1.TabIndex = 5;
             // 
@@ -246,6 +247,8 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.btnCloseTable);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label7);
@@ -255,6 +258,26 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(359, 105);
             this.panel4.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(273, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(22, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = " - ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(91, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(134, 20);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Hora de abertura:";
             // 
             // btnCloseTable
             // 
@@ -313,7 +336,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(359, 165);
             this.panel5.TabIndex = 1;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // udQuantidade
             // 
@@ -403,6 +425,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown udQuantidade;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label9;
       
     }
 }

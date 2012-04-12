@@ -73,9 +73,15 @@ namespace Worker
                 });
                 return;
             }
-
-            lbWaitingOrders.Items.Remove(order.Id);
-            lbInPreparation.Items.Add(order.Id);
+            treeView1.Nodes[order.Table - 1].Expand();
+            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+            {
+                if (t.Name == order.Id)
+                {
+                    t.BackColor = Color.Khaki;
+                    break;
+                }
+            }
         }
 
         public void NewOrderNotification(Order order)
@@ -88,10 +94,14 @@ namespace Worker
                 });
                 return;
             }
+            TreeNode tn = new TreeNode(order.Description);
+            tn.BackColor = Color.IndianRed;
+            tn.Name = order.Id;
 
+            treeView1.Nodes[order.Table - 1].Nodes.Add(tn);
 
-            lbWaitingOrders.Items.Add(order.Id);
-
+            treeView1.Nodes[order.Table - 1].Expand();
+            label3.Text = ordersServer.GetTableTime(order.Table);
         }
 
         public void RemovedNotification(Order order)
@@ -104,8 +114,14 @@ namespace Worker
                 });
                 return;
             }
-
-            lbWaitingOrders.Items.Remove(order.Id);
+            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+            {
+                if (t.Name == order.Id)
+                {
+                    treeView1.Nodes[order.Table - 1].Nodes.Remove(t);
+                    break;
+                }
+            }
         }
 
         public void FinishedNotification(Order order)
@@ -118,8 +134,15 @@ namespace Worker
                 });
                 return;
             }
-
-            lbInPreparation.Items.Remove(order.Id);
+            treeView1.Nodes[order.Table - 1].Expand();
+            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+            {
+                if (t.Name == order.Id)
+                {
+                    t.BackColor = Color.LightGreen;
+                    break;
+                }
+            }
         }
 
 
@@ -129,27 +152,99 @@ namespace Worker
             switch (location)
             {
                 case Locations.Bar:
-                    this.Text += "bar";
+                    label8.Text = "Bar";
                     break;
                 case Locations.Kitchen:
-                    this.Text += "kitchen";
+                    label8.Text = "Kitchen";
                     break;
                 default:
                     break;
             }
 
             foreach (Order order in ordersServer.GetOrdersByLocation(location))
-                lbWaitingOrders.Items.Add(order.Id);
+            {
+                TreeNode tn = new TreeNode(order.Description);
+                switch (order.Status)
+                {
+                    case OrderStatus.Finished:
+                        tn.BackColor = Color.LightGreen;
+                        break;
+                    case OrderStatus.Started:
+                        tn.BackColor = Color.Khaki;
+                        break;
+                    case OrderStatus.NotStarted:
+                        tn.BackColor = Color.IndianRed;
+                        break;
+                }
+                tn.Name = order.Id;
+                treeView1.Nodes[order.Table - 1].Nodes.Add(tn);
+                
+            }
+            treeView1.ExpandAll();
+            label1.Text = "Mesa 1";
+            label3.Text = ordersServer.GetTableTime(1);
+            treeView1.SelectedNode = treeView1.Nodes[0];
+            button1.Text = "Começar pedido";
+            button1.Enabled = false;
+
+
+            treeView1.AfterSelect += new TreeViewEventHandler(TreeView1_AfterSelect);
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void TreeView1_AfterSelect(System.Object sender,
+        System.Windows.Forms.TreeViewEventArgs e)
         {
-            ordersServer.StartOrder(((string)lbWaitingOrders.SelectedItem));
+            if (e.Node.Parent == null)
+            {
+                label1.Text = e.Node.Text;
+                label3.Text = ordersServer.GetTableTime(treeView1.Nodes.IndexOf(e.Node) + 1);
+                button1.Text = "Começar pedido";
+                button1.Enabled = false;
+            }
+            else {
+                switch (ordersServer.GetOrderById(treeView1.SelectedNode.Name).Status)
+                {
+                case OrderStatus.NotStarted:
+                    button1.Text = "Começar pedido";
+                    button1.Enabled = true;
+                    break;
+                case OrderStatus.Started:
+                    button1.Text = "Terminar pedido";
+                    button1.Enabled = true;
+                    break;
+                case OrderStatus.Finished:
+                    button1.Enabled = false;
+                    break;
+                default:
+                    break;
+                }
+
+                label1.Text = e.Node.Parent.Text;
+                label3.Text = ordersServer.GetTableTime(treeView1.Nodes.IndexOf(e.Node.Parent) + 1);
+            }
+
         }
 
-        private void btnEnd_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            ordersServer.EndOrder(((string)lbInPreparation.SelectedItem));
+            if(treeView1.SelectedNode.Parent == null)
+                return;
+
+            switch (ordersServer.GetOrderById(treeView1.SelectedNode.Name).Status)
+            {
+                case OrderStatus.NotStarted:
+                    ordersServer.StartOrder(treeView1.SelectedNode.Name);
+                    button1.Text = "Terminar pedido";
+                    button1.Enabled = true;
+                    break;
+                case OrderStatus.Started:
+                    ordersServer.EndOrder(treeView1.SelectedNode.Name);
+                    button1.Enabled = false;
+                    break;
+                default:
+                    break;
+
+            }
         }
     }
 }
