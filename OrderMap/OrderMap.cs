@@ -53,11 +53,19 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
             List<Order> l2 = new List<Order>();
             orders[Locations.Bar].Add(order.Table, l);
             orders[Locations.Kitchen].Add(order.Table, l2);
+            NotifyClients(Operations.NewOrder, order);
+            NotifyWorkers(Operations.NewOrder, order, barEvent);
+            NotifyWorkers(Operations.NewOrder, order, kitchenEvent);
+            return;
         }
         else if(order.Price == -2.0)
         {
             orders[Locations.Bar].Remove(order.Table);
             orders[Locations.Kitchen].Remove(order.Table);
+            NotifyClients(Operations.NewOrder, order);
+            NotifyWorkers(Operations.NewOrder, order, barEvent);
+            NotifyWorkers(Operations.NewOrder, order, kitchenEvent);
+            return;
         }
 
         NotifyClients(Operations.NewOrder, order);
