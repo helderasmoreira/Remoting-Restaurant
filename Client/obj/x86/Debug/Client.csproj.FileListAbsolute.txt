@@ -34,18 +34,6 @@ C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\Client.Properties.Resources.resources
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Client\obj\x86\Debug\GenerateResource.write.1.tlog
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Client.exe.config
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.exe
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.pdb
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Client.exe
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Client.pdb
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Shared.dll
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Shared.pdb
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.Client.resources
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.Properties.Resources.resources
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\GenerateResource.read.1.tlog
-D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Babo\Desktop\Remoting-Restaurant\Client\bin\Debug\Client.exe.config
 C:\Users\Babo\Desktop\Remoting-Restaurant\Client\obj\x86\Debug\Client.exe
 C:\Users\Babo\Desktop\Remoting-Restaurant\Client\obj\x86\Debug\Client.pdb
@@ -58,3 +46,16 @@ C:\Users\Babo\Desktop\Remoting-Restaurant\Client\bin\Debug\Client.exe
 C:\Users\Babo\Desktop\Remoting-Restaurant\Client\bin\Debug\Client.pdb
 C:\Users\Babo\Desktop\Remoting-Restaurant\Client\bin\Debug\Shared.dll
 C:\Users\Babo\Desktop\Remoting-Restaurant\Client\bin\Debug\Shared.pdb
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Client.exe.config
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Client.exe
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Client.pdb
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Shared.dll
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\bin\Debug\Shared.pdb
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.AddOrder.resources
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.Client.resources
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.Properties.Resources.resources
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.exe
+D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.pdb

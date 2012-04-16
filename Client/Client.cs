@@ -14,10 +14,7 @@ namespace Client
     public partial class Client : Form
     {
         IOrderMap ordersServer;
-        public double[] pricesBar;
-        public double[] pricesKitchen;
-        public string[] bar;
-        public string[] kitchen;
+       
         Dictionary<Locations, Dictionary<String, List<Order>>> orders;
         OperationEventRepeater evRepeater;
 
@@ -36,10 +33,6 @@ namespace Client
 
         private void Client_Load(object sender, EventArgs e)
         {
-            pricesKitchen = new double[] { 4.50, 4.00, 6.00, 7.25 };
-            pricesBar = new double[] { 5.00, 1.50, 1.00, 3.50 };
-            kitchen = new string[] { "Alheira de Mirandela", "Costeleta Grelhada", "Espetada de Porco", "Bife de Frango" };
-            bar = new string[] { "Cocktail de frutas", "Fino traçado", "Água com groselha", "Sangria" };
             this.treeView1.SelectedNode = this.treeView1.Nodes[0];
             label1.Text = this.treeView1.Nodes[0].Text;
             label7.Text = "0 €";
@@ -47,7 +40,6 @@ namespace Client
            
             foreach (TreeNode tn2 in treeView1.Nodes)
             {
-
                 foreach (Order order in ordersServer.GetOrdersByTable(tn2.Text))
                 {
                     TreeNode tn = new TreeNode(order.Description);
@@ -229,28 +221,9 @@ namespace Client
 
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
-            Order o;
-            TreeNode tn = treeView1.SelectedNode;
-
-            //assumindo que só temos 2 niveis
-            if (tn.Parent != null)
-                tn = tn.Parent;
-
-            if (cbDescricao.SelectedItem == null || cbTipo.SelectedItem == null)
-            {
-                MessageBox.Show("Tem que preencher todos os campos para criar um pedido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-
-            for (int i = 0; i < udQuantidade.Value; i++)
-            {
-                if (cbTipo.SelectedItem.Equals("Bar"))
-                    o = new Order(DateTime.Now, tn.Text, 1, pricesBar[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Bar);
-                else
-                    o = new Order(DateTime.Now, tn.Text, 1, pricesKitchen[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Kitchen);
-                ordersServer.AddOrder(o);
-            }
+            ArrayList newOrder = new ArrayList();
+            AddOrder ao = new AddOrder(ref newOrder, treeView1.SelectedNode.Name);
+            ao.ShowDialog();
         }
 
         private void TreeView1_AfterSelect(System.Object sender,
@@ -321,29 +294,6 @@ namespace Client
                         }
                         break;
                 }
-            }
-        }
-
-        private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbDescricao.Items.Clear();
-            cbDescricao.Text = "";
-            if (cbTipo.SelectedItem.Equals("Bar"))
-                foreach (string s in bar)
-                    cbDescricao.Items.Add(s);
-            else
-                foreach (string s in kitchen)
-                    cbDescricao.Items.Add(s);
-        }
-
-        private void cbDescricao_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbDescricao.SelectedItem != null)
-            {
-                if (cbTipo.SelectedItem.Equals("Bar"))
-                    label11.Text = pricesBar[cbDescricao.SelectedIndex].ToString() + " €";
-                else
-                    label11.Text = pricesKitchen[cbDescricao.SelectedIndex].ToString() + " €";
             }
         }
 
