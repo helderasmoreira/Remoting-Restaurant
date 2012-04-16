@@ -60,6 +60,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.udQuantidade = new System.Windows.Forms.NumericUpDown();
             this.eliminarTolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -152,6 +154,7 @@
             this.cbDescricao.Name = "cbDescricao";
             this.cbDescricao.Size = new System.Drawing.Size(168, 21);
             this.cbDescricao.TabIndex = 3;
+            this.cbDescricao.SelectedIndexChanged += new System.EventHandler(this.cbDescricao_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -324,6 +327,8 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Moccasin;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.udQuantidade);
             this.panel5.Controls.Add(this.btnNovoPedido);
             this.panel5.Controls.Add(this.label4);
@@ -336,6 +341,24 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(359, 165);
             this.panel5.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(196, 83);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(10, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = " ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(196, 61);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Preço:";
             // 
             // udQuantidade
             // 
@@ -427,6 +450,8 @@
         private System.Windows.Forms.NumericUpDown udQuantidade;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
       
     }
 }

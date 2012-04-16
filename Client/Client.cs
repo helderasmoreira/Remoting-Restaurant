@@ -288,6 +288,19 @@ namespace Client
                 foreach (string s in kitchen)
                     cbDescricao.Items.Add(s);
         }
+
+        private void cbDescricao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbDescricao.SelectedItem != null)
+            {
+                if (cbTipo.SelectedItem.Equals("Bar"))
+                    label11.Text = pricesBar[cbDescricao.SelectedIndex].ToString() + " €"; 
+                else
+                    label11.Text = pricesKitchen[cbDescricao.SelectedIndex].ToString() + " €"; 
+            }
+        }
+
+       
     }
 }
 
