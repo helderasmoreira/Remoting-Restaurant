@@ -224,6 +224,9 @@ namespace Client
             ArrayList newOrder = new ArrayList();
             AddOrder ao = new AddOrder(ref newOrder, treeView1.SelectedNode.Name);
             ao.ShowDialog();
+            
+            
+            //adicionar cada order no newOrder ao objeto remoto como normalmente
         }
 
         private void TreeView1_AfterSelect(System.Object sender,
