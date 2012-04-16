@@ -49,6 +49,10 @@
             this.cbDescricao = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tableID = new System.Windows.Forms.TextBox();
+            this.addTable = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,15 +70,19 @@
             this.eliminarTolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.udQuantidade)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNovoPedido
@@ -95,7 +103,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(571, 30);
+            this.panel2.Size = new System.Drawing.Size(571, 37);
             this.panel2.TabIndex = 3;
             // 
             // label8
@@ -170,21 +178,59 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.41975F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.58025F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(577, 324);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(577, 377);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.treeView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 39);
+            this.panel1.Location = new System.Drawing.Point(3, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 282);
+            this.panel1.Size = new System.Drawing.Size(200, 328);
             this.panel1.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label12);
+            this.panel6.Controls.Add(this.tableID);
+            this.panel6.Controls.Add(this.addTable);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 302);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 26);
+            this.panel6.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(140, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(18, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "ID";
+            // 
+            // tableID
+            // 
+            this.tableID.Location = new System.Drawing.Point(162, 3);
+            this.tableID.Name = "tableID";
+            this.tableID.Size = new System.Drawing.Size(34, 20);
+            this.tableID.TabIndex = 1;
+            // 
+            // addTable
+            // 
+            this.addTable.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addTable.Location = new System.Drawing.Point(0, 0);
+            this.addTable.Name = "addTable";
+            this.addTable.Size = new System.Drawing.Size(136, 26);
+            this.addTable.TabIndex = 0;
+            this.addTable.Text = "Adicionar Mesa";
+            this.addTable.UseVisualStyleBackColor = true;
+            this.addTable.Click += new System.EventHandler(this.addTable_Click);
             // 
             // treeView1
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "Node0";
@@ -218,16 +264,16 @@
             treeNode8,
             treeNode9,
             treeNode10});
-            this.treeView1.Size = new System.Drawing.Size(200, 282);
+            this.treeView1.Size = new System.Drawing.Size(200, 299);
             this.treeView1.TabIndex = 5;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.tableLayoutPanel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(209, 39);
+            this.panel3.Location = new System.Drawing.Point(209, 46);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(365, 282);
+            this.panel3.Size = new System.Drawing.Size(365, 328);
             this.panel3.TabIndex = 5;
             // 
             // tableLayoutPanel2
@@ -243,7 +289,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.71631F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.28369F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(365, 282);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(365, 328);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel4
@@ -259,7 +305,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(359, 105);
+            this.panel4.Size = new System.Drawing.Size(359, 124);
             this.panel4.TabIndex = 0;
             // 
             // label3
@@ -337,9 +383,9 @@
             this.panel5.Controls.Add(this.cbTipo);
             this.panel5.Controls.Add(this.cbDescricao);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 114);
+            this.panel5.Location = new System.Drawing.Point(3, 133);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(359, 165);
+            this.panel5.Size = new System.Drawing.Size(359, 192);
             this.panel5.TabIndex = 1;
             // 
             // label11
@@ -394,15 +440,30 @@
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.contextMenuStrip2.Name = "contextMenuStrip1";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(142, 26);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
+            this.toolStripMenuItem1.Text = "Eliminar";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 324);
+            this.ClientSize = new System.Drawing.Size(577, 377);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Client";
             this.Text = "Cliente Sala";
@@ -411,6 +472,8 @@
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -419,6 +482,7 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.udQuantidade)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -452,6 +516,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button addTable;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox tableID;
       
     }
 }

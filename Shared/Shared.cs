@@ -8,14 +8,15 @@ using System.Collections;
 public class Order {
 
     string id;
-    int table, quantity;
+    string table;
+    int quantity;
     double price;
     DateTime time;
     string description;
     OrderStatus status;
     Locations location;
 
-    public Order(DateTime time, int table, int quantity, double price, string description, OrderStatus status, Locations location)
+    public Order(DateTime time, string table, int quantity, double price, string description, OrderStatus status, Locations location)
     {
         this.time = time;
         this.id = GenerateId();
@@ -45,7 +46,7 @@ public class Order {
         set { id = value; }
     }
 
-    public int Table
+    public string Table
     {
         get { return table; }
         set { table = value; }
@@ -96,16 +97,16 @@ public interface IOrderMap {
     event OperationDelegate kitchenEvent;
     
 
-    Dictionary<Locations, Dictionary<int, List<Order>>> GetOrders();
+    Dictionary<Locations, Dictionary<string, List<Order>>> GetOrders();
     void AddOrder(Order order);
     void StartOrder(string orderId);
     void EndOrder(string orderId);
     List<Order> GetOrdersByLocation(Locations location);
-    List<Order> GetOrdersByTable(int table);
-    double GetTableCheck(int table);
+    List<Order> GetOrdersByTable(string table);
+    double GetTableCheck(string table);
     Order GetOrderById(string id);
-    string GetTableTime(int id);
-    int CloseTable(int id);
+    string GetTableTime(string id);
+    int CloseTable(string id);
     void RemoveOrderById(string id);
 
 }

@@ -15,7 +15,7 @@ namespace Worker
     public partial class Worker : Form
     {
         IOrderMap ordersServer;
-        Dictionary<Locations, Dictionary<int, List<Order>>> orders;
+        Dictionary<Locations, Dictionary<String, List<Order>>> orders;
         OperationEventRepeater evRepeater;
         Locations location;
 
@@ -73,8 +73,15 @@ namespace Worker
                 });
                 return;
             }
-            treeView1.Nodes[order.Table - 1].Expand();
-            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+
+            TreeNode temp = null;
+
+            foreach (TreeNode tn2 in treeView1.Nodes)
+                if (tn2.Text.Equals(order.Table))
+                    temp = tn2;
+
+            temp.Expand();
+            foreach (TreeNode t in temp.Nodes)
             {
                 if (t.Name == order.Id)
                 {
@@ -94,14 +101,38 @@ namespace Worker
                 });
                 return;
             }
-            TreeNode tn = new TreeNode(order.Description);
-            tn.BackColor = Color.IndianRed;
-            tn.Name = order.Id;
 
-            treeView1.Nodes[order.Table - 1].Nodes.Add(tn);
+            if (order.Price >= 0.0)
+            {
+                TreeNode tn = new TreeNode(order.Description);
+                tn.BackColor = Color.IndianRed;
+                tn.Name = order.Id;
+                TreeNode temp = null;
 
-            treeView1.Nodes[order.Table - 1].Expand();
-            label3.Text = ordersServer.GetTableTime(order.Table);
+                foreach (TreeNode tn2 in treeView1.Nodes)
+                    if (tn2.Text.Equals(order.Table))
+                        temp = tn2;
+
+                temp.Nodes.Add(tn);
+
+                temp.Expand();
+                label3.Text = ordersServer.GetTableTime(order.Table);
+            }
+            else if (order.Price == -1.0)
+            {
+                treeView1.Nodes.Add(order.Description);
+            }
+            else if (order.Price == -2.0)
+            {
+                foreach (TreeNode tn in treeView1.Nodes)
+                {
+                    if (tn.Text.Equals(order.Description))
+                    {
+                        treeView1.Nodes.Remove(tn);
+                        return;
+                    }
+                }
+            }
         }
 
         public void RemovedNotification(Order order)
@@ -114,11 +145,18 @@ namespace Worker
                 });
                 return;
             }
-            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+
+            TreeNode temp = null;
+
+            foreach (TreeNode tn2 in treeView1.Nodes)
+                if (tn2.Text.Equals(order.Table))
+                    temp = tn2;
+
+            foreach (TreeNode t in temp.Nodes)
             {
                 if (t.Name == order.Id)
                 {
-                    treeView1.Nodes[order.Table - 1].Nodes.Remove(t);
+                    temp.Nodes.Remove(t);
                     break;
                 }
             }
@@ -134,8 +172,15 @@ namespace Worker
                 });
                 return;
             }
-            treeView1.Nodes[order.Table - 1].Expand();
-            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+
+            TreeNode temp = null;
+
+            foreach (TreeNode tn2 in treeView1.Nodes)
+                if (tn2.Text.Equals(order.Table))
+                    temp = tn2;
+
+            temp.Expand();
+            foreach (TreeNode t in temp.Nodes)
             {
                 if (t.Name == order.Id)
                 {
@@ -177,12 +222,17 @@ namespace Worker
                         break;
                 }
                 tn.Name = order.Id;
-                treeView1.Nodes[order.Table - 1].Nodes.Add(tn);
+                TreeNode temp = null;
+
+                foreach (TreeNode tn2 in treeView1.Nodes)
+                    if (tn2.Text.Equals(order.Table))
+                        temp = tn2;
+                temp.Nodes.Add(tn);
                 
             }
             treeView1.ExpandAll();
             label1.Text = "Mesa 1";
-            label3.Text = ordersServer.GetTableTime(1);
+            label3.Text = ordersServer.GetTableTime("Mesa 1");
             treeView1.SelectedNode = treeView1.Nodes[0];
             button1.Text = "Começar pedido";
             button1.Enabled = false;
@@ -197,7 +247,7 @@ namespace Worker
             if (e.Node.Parent == null)
             {
                 label1.Text = e.Node.Text;
-                label3.Text = ordersServer.GetTableTime(treeView1.Nodes.IndexOf(e.Node) + 1);
+                label3.Text = ordersServer.GetTableTime(e.Node.Text);
                 button1.Text = "Começar pedido";
                 button1.Enabled = false;
             }
@@ -220,7 +270,7 @@ namespace Worker
                 }
 
                 label1.Text = e.Node.Parent.Text;
-                label3.Text = ordersServer.GetTableTime(treeView1.Nodes.IndexOf(e.Node.Parent) + 1);
+                label3.Text = ordersServer.GetTableTime(e.Node.Parent.Name);
             }
 
         }

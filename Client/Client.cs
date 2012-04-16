@@ -18,12 +18,12 @@ namespace Client
         public double[] pricesKitchen;
         public string[] bar;
         public string[] kitchen;
-        Dictionary<Locations, Dictionary<int, List<Order>>> orders;
+        Dictionary<Locations, Dictionary<String, List<Order>>> orders;
         OperationEventRepeater evRepeater;
-       
+
         public Client()
         {
-            
+
             RemotingConfiguration.Configure("Client.exe.config", false);
             InitializeComponent();
             ordersServer = (IOrderMap)RemoteNew.New(typeof(IOrderMap));
@@ -38,15 +38,17 @@ namespace Client
         {
             pricesKitchen = new double[] { 4.50, 4.00, 6.00, 7.25 };
             pricesBar = new double[] { 5.00, 1.50, 1.00, 3.50 };
-            kitchen = new string[] {"Alheira de Mirandela", "Costeleta Grelhada", "Espetada de Porco", "Bife de Frango"};
-            bar = new string[] {"Cocktail de frutas", "Fino traçado", "Água com groselha", "Sangria"};
+            kitchen = new string[] { "Alheira de Mirandela", "Costeleta Grelhada", "Espetada de Porco", "Bife de Frango" };
+            bar = new string[] { "Cocktail de frutas", "Fino traçado", "Água com groselha", "Sangria" };
             this.treeView1.SelectedNode = this.treeView1.Nodes[0];
             label1.Text = this.treeView1.Nodes[0].Text;
             label7.Text = "0 €";
 
-            for (int i = 1; i <= 10; i++)
+           
+            foreach (TreeNode tn2 in treeView1.Nodes)
             {
-                foreach (Order order in ordersServer.GetOrdersByTable(i))
+
+                foreach (Order order in ordersServer.GetOrdersByTable(tn2.Text))
                 {
                     TreeNode tn = new TreeNode(order.Description);
                     switch (order.Status)
@@ -62,11 +64,12 @@ namespace Client
                             break;
                     }
                     tn.Name = order.Id;
-                    treeView1.Nodes[order.Table - 1].Nodes.Add(tn);
-                    treeView1.Nodes[order.Table - 1].Expand();
+
+                    tn2.Nodes.Add(tn);
+                    tn2.Expand();
                 }
             }
-
+        
             treeView1.AfterSelect += new TreeViewEventHandler(TreeView1_AfterSelect);
             treeView1.MouseDown += new MouseEventHandler(treeView1_mouseDown);
         }
@@ -87,8 +90,8 @@ namespace Client
                 case Operations.Removed:
                     OrderRemovedNotification(order);
                     break;
-              
-            } 
+
+            }
         }
 
         public void NewOrderNotification(Order order)
@@ -101,15 +104,40 @@ namespace Client
                 });
                 return;
             }
-            TreeNode tn = new TreeNode(order.Description);
-            tn.BackColor = Color.IndianRed;
-            tn.Name = order.Id;
+            if (order.Price >= 0)
+            {
+                TreeNode tn = new TreeNode(order.Description);
+                tn.BackColor = Color.IndianRed;
+                tn.Name = order.Id;
+                TreeNode temp = null;
+                
+                foreach (TreeNode tn2 in treeView1.Nodes)
+                    if (tn2.Text.Equals(order.Table))
+                        temp = tn2;
 
-            treeView1.Nodes[order.Table - 1].Nodes.Add(tn);
+                temp.Nodes.Add(tn);
 
-            treeView1.Nodes[order.Table - 1].Expand();
-            label7.Text = ordersServer.GetTableCheck(order.Table).ToString() + " €";
-            label3.Text = ordersServer.GetTableTime(order.Table);
+                temp.Expand();
+                label7.Text = ordersServer.GetTableCheck(order.Table).ToString() + " €";
+                label3.Text = ordersServer.GetTableTime(order.Table);
+            }
+            else if (order.Price == -1.0)
+            {
+                treeView1.Nodes.Add(order.Description);
+            }
+            else if (order.Price == -2.0)
+            {
+                
+                foreach (TreeNode tn in treeView1.Nodes)
+                {
+                    if (tn.Text.Equals(order.Description))
+                    {
+                        treeView1.Nodes.Remove(tn);
+                        return;
+                    }
+                }
+            }
+
         }
 
         public void OrderRemovedNotification(Order order)
@@ -122,16 +150,22 @@ namespace Client
                 });
                 return;
             }
-            
-            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes) 
+
+            TreeNode temp = null;
+
+            foreach (TreeNode tn2 in treeView1.Nodes)
+                if (tn2.Text.Equals(order.Table))
+                    temp = tn2;
+
+            foreach (TreeNode t in temp.Nodes)
             {
                 if (t.Name == order.Id)
                 {
-                    treeView1.Nodes[order.Table - 1].Nodes.Remove(t);
+                    temp.Nodes.Remove(t);
                     break;
                 }
             }
-           
+
             label7.Text = ordersServer.GetTableCheck(order.Table).ToString() + " €";
         }
 
@@ -145,9 +179,14 @@ namespace Client
                 });
                 return;
             }
+            TreeNode temp = null;
 
-            treeView1.Nodes[order.Table - 1].Expand();
-            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+            foreach (TreeNode tn2 in treeView1.Nodes)
+                if (tn2.Text.Equals(order.Table))
+                    temp = tn2;
+
+            temp.Expand();
+            foreach (TreeNode t in temp.Nodes)
             {
                 if (t.Name == order.Id)
                 {
@@ -169,8 +208,14 @@ namespace Client
                 return;
             }
 
-            treeView1.Nodes[order.Table - 1].Expand();
-            foreach (TreeNode t in treeView1.Nodes[order.Table - 1].Nodes)
+            TreeNode temp = null;
+
+            foreach (TreeNode tn2 in treeView1.Nodes)
+                if (tn2.Text.Equals(order.Table))
+                    temp = tn2;
+
+            temp.Expand();
+            foreach (TreeNode t in temp.Nodes)
             {
                 if (t.Name == order.Id)
                 {
@@ -186,7 +231,7 @@ namespace Client
         {
             Order o;
             TreeNode tn = treeView1.SelectedNode;
-            
+
             //assumindo que só temos 2 niveis
             if (tn.Parent != null)
                 tn = tn.Parent;
@@ -196,14 +241,14 @@ namespace Client
                 MessageBox.Show("Tem que preencher todos os campos para criar um pedido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-                
+
 
             for (int i = 0; i < udQuantidade.Value; i++)
             {
                 if (cbTipo.SelectedItem.Equals("Bar"))
-                    o = new Order(DateTime.Now, treeView1.Nodes.IndexOf(tn) + 1, 1, pricesBar[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Bar);
+                    o = new Order(DateTime.Now, tn.Text, 1, pricesBar[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Bar);
                 else
-                    o = new Order(DateTime.Now, treeView1.Nodes.IndexOf(tn) + 1, 1, pricesKitchen[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Kitchen);
+                    o = new Order(DateTime.Now, tn.Text, 1, pricesKitchen[cbDescricao.SelectedIndex], ((string)cbDescricao.SelectedItem), OrderStatus.NotStarted, Locations.Kitchen);
                 ordersServer.AddOrder(o);
             }
         }
@@ -214,14 +259,14 @@ namespace Client
             if (e.Node.Parent == null)
             {
                 label1.Text = e.Node.Text;
-                label7.Text = ordersServer.GetTableCheck(treeView1.Nodes.IndexOf(e.Node) + 1).ToString() + " €";
-                label3.Text = ordersServer.GetTableTime(treeView1.Nodes.IndexOf(e.Node) + 1);
+                label7.Text = ordersServer.GetTableCheck(e.Node.Text) + " €";
+                label3.Text = ordersServer.GetTableTime(e.Node.Text);
             }
             else
             {
                 label1.Text = e.Node.Parent.Text;
-                label7.Text = ordersServer.GetTableCheck(treeView1.Nodes.IndexOf(e.Node.Parent) + 1).ToString() + " €";
-                label3.Text = ordersServer.GetTableTime(treeView1.Nodes.IndexOf(e.Node.Parent) + 1);
+                label7.Text = ordersServer.GetTableCheck(e.Node.Parent.Text) + " €";
+                label3.Text = ordersServer.GetTableTime(e.Node.Parent.Text);
             }
 
 
@@ -234,11 +279,11 @@ namespace Client
             if (tn.Parent != null)
                 tn = tn.Parent;
 
-            string value = ordersServer.GetTableCheck(treeView1.Nodes.IndexOf(tn) + 1).ToString() + " €";
-            int ret = ordersServer.CloseTable(treeView1.Nodes.IndexOf(tn) + 1);
-            if(ret == -1)
+            string value = ordersServer.GetTableCheck(tn.Name).ToString() + " €";
+            int ret = ordersServer.CloseTable(tn.Text);
+            if (ret == -1)
                 MessageBox.Show("Impossível fechar mesa, pois há pedidos pendentes!", "Fechar Mesa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else if(ret == -2)
+            else if (ret == -2)
                 MessageBox.Show("Ainda tem pedidos que não foram começados. Elimine-os primeiro e tente novamente!", "Fechar Mesa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                 MessageBox.Show("Mesa fechada com sucesso! Total a pagar: " + value, "Fechar Mesa", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -251,6 +296,8 @@ namespace Client
                 treeView1.SelectedNode = treeView1.GetNodeAt(e.X, e.Y);
                 if (treeView1.GetNodeAt(e.X, e.Y).Parent != null)
                     contextMenuStrip1.Show(MousePosition);
+                else if (treeView1.GetNodeAt(e.X, e.Y).Parent == null)
+                    contextMenuStrip2.Show(MousePosition);
             }
 
         }
@@ -294,15 +341,50 @@ namespace Client
             if (cbDescricao.SelectedItem != null)
             {
                 if (cbTipo.SelectedItem.Equals("Bar"))
-                    label11.Text = pricesBar[cbDescricao.SelectedIndex].ToString() + " €"; 
+                    label11.Text = pricesBar[cbDescricao.SelectedIndex].ToString() + " €";
                 else
-                    label11.Text = pricesKitchen[cbDescricao.SelectedIndex].ToString() + " €"; 
+                    label11.Text = pricesKitchen[cbDescricao.SelectedIndex].ToString() + " €";
             }
         }
 
-       
+        private void addTable_Click(object sender, EventArgs e)
+        {
+            if (!tableID.Text.Equals(""))
+            {
+                String mesa = "Mesa " + tableID.Text;
+                foreach(TreeNode t in treeView1.Nodes)
+                {
+                    if (t.Text.Equals(mesa))
+                        return; 
+                }
+
+                Order o = new Order(DateTime.Now, mesa, 1, -1.0, mesa, OrderStatus.NotStarted, Locations.Bar);
+
+               ordersServer.AddOrder(o);
+            }
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode.Nodes.Count > 0)
+            {
+                MessageBox.Show("Não é possível eliminar a mesa pois contém pedidos. ");
+            }
+            else
+            {
+                Order o = new Order(DateTime.Now, treeView1.SelectedNode.Text, 1, -2.0, treeView1.SelectedNode.Text, OrderStatus.NotStarted, Locations.Bar);
+
+                ordersServer.AddOrder(o);
+
+                //treeView1.Nodes.Remove(treeView1.SelectedNode);
+            }
+        }
     }
+
 }
+
+
 
 /* Mechanism for instanciating a remote object through its interface, using the config file */
 

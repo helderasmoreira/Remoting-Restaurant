@@ -7,7 +7,7 @@ using System.Text;
 
 public class OrderMap : MarshalByRefObject, IOrderMap {
 
-    Dictionary<Locations, Dictionary<int, List<Order>>> orders;
+    Dictionary<Locations, Dictionary<String, List<Order>>> orders;
     public event OperationDelegate clientEvent;
     public event OperationDelegate barEvent;
     public event OperationDelegate kitchenEvent;
@@ -18,24 +18,24 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         Console.WriteLine("Constructor called.");
  
 
-        this.orders = new Dictionary<Locations, Dictionary<int, List<Order>>>();
+        this.orders = new Dictionary<Locations, Dictionary<String, List<Order>>>();
 
         //dados de teste
-        Dictionary<int, List<Order>> bar = new Dictionary<int, List<Order>>();
-        Dictionary<int, List<Order>> kitchen = new Dictionary<int, List<Order>>();
+        Dictionary<String, List<Order>> bar = new Dictionary<String, List<Order>>();
+        Dictionary<String, List<Order>> kitchen = new Dictionary<String, List<Order>>();
         for (int i = 0; i < 10; i++)
         {
             List<Order> l = new List<Order>();
-            bar.Add(i+1, l);
+            bar.Add("Mesa " + (i+1), l);
             List<Order> l2 = new List<Order>();
-            kitchen.Add(i + 1, l2);
+            kitchen.Add("Mesa " + (i + 1), l2);
         }
 
         this.orders.Add(Locations.Bar, bar);
         this.orders.Add(Locations.Kitchen, kitchen);
     }
 
-    public Dictionary<Locations, Dictionary<int, List<Order>>> GetOrders()
+    public Dictionary<Locations, Dictionary<String, List<Order>>> GetOrders()
     {
         Console.WriteLine("GetOrders called!");
         return orders;
@@ -45,7 +45,21 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
     {
 
         Console.WriteLine("AddOrder called!");
-        orders[order.Location][order.Table].Add(order);
+        if(order.Price >= 0.0)
+            orders[order.Location][order.Table].Add(order);
+        else if (order.Price == -1.0)
+        {
+            List<Order> l = new List<Order>();
+            List<Order> l2 = new List<Order>();
+            orders[Locations.Bar].Add(order.Table, l);
+            orders[Locations.Kitchen].Add(order.Table, l2);
+        }
+        else if(order.Price == -2.0)
+        {
+            orders[Locations.Bar].Remove(order.Table);
+            orders[Locations.Kitchen].Remove(order.Table);
+        }
+
         NotifyClients(Operations.NewOrder, order);
 
         switch (order.Location)
@@ -68,20 +82,27 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         NotifyClients(Operations.Started, order);
 
         if (order.Location == Locations.Bar)
+        {
             NotifyWorkers(Operations.Started, order, barEvent);
+        }
         else
             NotifyWorkers(Operations.Started, order, kitchenEvent);
     }
 
-    public string GetTableTime(int id)
+    public string GetTableTime(string id)
     {
-        if(orders[Locations.Bar][id].Count() == 0 && orders[Locations.Kitchen][id].Count() == 0) 
-            return " - ";
-        DateTime dt = DateTime.Now;
-        foreach (Order o in GetOrdersByTable(id))
-            if (o.Time.CompareTo(dt) == -1)
-                dt = o.Time;
-        return dt.ToShortTimeString();
+        if (orders[Locations.Bar].ContainsKey(id) && orders[Locations.Kitchen].ContainsKey(id))
+        {
+            if (orders[Locations.Bar][id].Count() == 0 && orders[Locations.Kitchen][id].Count() == 0)
+                return " - ";
+            DateTime dt = DateTime.Now;
+            foreach (Order o in GetOrdersByTable(id))
+                if (o.Time.CompareTo(dt) == -1)
+                    dt = o.Time;
+
+            return dt.ToShortTimeString();
+        }
+        return "";
     }
 
     public void EndOrder(string orderId)
@@ -100,7 +121,7 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
     public Order GetOrderById(string id)
     {
         //TODO return order with given id (à não trolha)
-        foreach (Dictionary<int, List<Order>> location in orders.Values)
+        foreach (Dictionary<string, List<Order>> location in orders.Values)
             foreach (List<Order> table in location.Values)
                 foreach(Order o in table)
                     if (o.Id.Equals(id))
@@ -114,15 +135,18 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         return orders[location].Values.SelectMany(x => x).ToList();
     }
 
-    public List<Order> GetOrdersByTable(int table)
+    public List<Order> GetOrdersByTable(string table)
     {
         List<List<Order>> l = new List<List<Order>>();
-        foreach (Locations loc in orders.Keys) 
-            l.Add(orders[loc][table]);
+        foreach (Locations loc in orders.Keys)
+        {
+            if(orders[loc].ContainsKey(table))
+                l.Add(orders[loc][table]);
+        }
         return l.SelectMany(x => x).ToList();    
     }
 
-    public double GetTableCheck(int table)
+    public double GetTableCheck(string table)
     {
         double total = 0.0;
         foreach (Order o in GetOrdersByTable(table))
@@ -130,7 +154,7 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
         return total;
     }
 
-    public int CloseTable(int id)
+    public int CloseTable(string id)
     {
         List<Order> orders = GetOrdersByTable(id);
         int ret = 0;
@@ -160,7 +184,7 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
 
     public void RemoveOrderById(string id)
     {
-        foreach (Dictionary<int, List<Order>> location in orders.Values)
+        foreach (Dictionary<string, List<Order>> location in orders.Values)
             foreach (List<Order> table in location.Values)
                 foreach (Order o in table)
                     if (o.Id.Equals(id))
@@ -175,7 +199,7 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
                     }
     }
 
-    void RemoveAllOrdersTable(int id)
+    void RemoveAllOrdersTable(string id)
     {
          orders[Locations.Bar][id].Clear();
          orders[Locations.Kitchen][id].Clear();
