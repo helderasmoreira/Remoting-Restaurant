@@ -15,6 +15,7 @@ namespace Worker
     public partial class Worker : Form
     {
         IOrderMap ordersServer;
+        bool askUser = false;
         Dictionary<Locations, Dictionary<String, List<Order>>> orders;
         OperationEventRepeater evRepeater;
         Locations location;
@@ -39,6 +40,8 @@ namespace Worker
                 ordersServer.kitchenEvent += new OperationDelegate(evRepeater.Repeater);
                 this.location = Locations.Kitchen;
             }
+            else
+                askUser = true;
         }
 
         public void NewServerNotification(Operations op, Order order)
@@ -194,6 +197,13 @@ namespace Worker
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            if (askUser)
+            {
+                //TODO criar form para perguntar se quer cozinha ou bar
+            }
+
+
             switch (location)
             {
                 case Locations.Bar:
