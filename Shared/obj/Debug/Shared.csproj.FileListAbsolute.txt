@@ -23,3 +23,8 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Shared\bin\Debug\Shared.pdb
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Shared\obj\Debug\ResolveAssemblyReference.cache
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Shared\obj\Debug\Shared.dll
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Shared\obj\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Shared\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Shared\bin\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Shared\obj\Debug\ResolveAssemblyReference.cache
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Shared\obj\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Shared\obj\Debug\Shared.pdb

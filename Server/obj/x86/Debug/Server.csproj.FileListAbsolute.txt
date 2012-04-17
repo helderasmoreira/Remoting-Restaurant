@@ -48,3 +48,13 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Server\bin\Debug\Shared.pdb
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Server\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Server\obj\x86\Debug\Server.exe
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Server\obj\x86\Debug\Server.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\bin\Debug\Server.exe.config
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\obj\x86\Debug\Server.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\obj\x86\Debug\Server.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\bin\Debug\Server.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\bin\Debug\Server.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\bin\Debug\OrderMap.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\bin\Debug\OrderMap.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\bin\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Server\obj\x86\Debug\ResolveAssemblyReference.cache

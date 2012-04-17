@@ -222,7 +222,11 @@ namespace Client
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
             ArrayList newOrder = new ArrayList();
-            AddOrder ao = new AddOrder(ref newOrder, treeView1.SelectedNode.Text);
+            AddOrder ao;
+            if(treeView1.SelectedNode.Parent != null)
+                ao = new AddOrder(ref newOrder, treeView1.SelectedNode.Parent.Text);  
+            else
+                ao = new AddOrder(ref newOrder, treeView1.SelectedNode.Text);  
             ao.ShowDialog();
 
             foreach (Order o in newOrder)
@@ -245,8 +249,6 @@ namespace Client
                 label7.Text = ordersServer.GetTableCheck(e.Node.Parent.Text) + " €";
                 label3.Text = ordersServer.GetTableTime(e.Node.Parent.Text);
             }
-
-
         }
 
         private void btnCloseTable_Click(object sender, EventArgs e)
@@ -256,7 +258,7 @@ namespace Client
             if (tn.Parent != null)
                 tn = tn.Parent;
 
-            string value = ordersServer.GetTableCheck(tn.Name).ToString() + " €";
+            string value = ordersServer.GetTableCheck(tn.Text).ToString() + " €";
             int ret = ordersServer.CloseTable(tn.Text);
             if (ret == -1)
                 MessageBox.Show("Impossível fechar mesa, pois há pedidos pendentes!", "Fechar Mesa", MessageBoxButtons.OK, MessageBoxIcon.Warning);

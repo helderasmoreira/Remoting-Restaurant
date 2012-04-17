@@ -59,3 +59,16 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\GenerateRe
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.exe
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Client\obj\x86\Debug\Client.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\bin\Debug\Client.exe.config
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\obj\x86\Debug\Client.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\obj\x86\Debug\Client.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\bin\Debug\Client.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\bin\Debug\Client.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\bin\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\obj\x86\Debug\Client.AddOrder.resources
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\obj\x86\Debug\Client.Client.resources
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\obj\x86\Debug\Client.Properties.Resources.resources
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Client\obj\x86\Debug\GenerateResource.write.1.tlog

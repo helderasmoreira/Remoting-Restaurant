@@ -34,3 +34,16 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateRe
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.exe
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\bin\Debug\Worker.exe.config
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\Worker.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\Worker.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\bin\Debug\Worker.exe
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\bin\Debug\Worker.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\bin\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\ResolveAssemblyReference.cache
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\Worker.Worker.resources
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\Worker.Properties.Resources.resources
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\GenerateResource.read.1.tlog
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\GenerateResource.write.1.tlog
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\Worker.Inicial.resources

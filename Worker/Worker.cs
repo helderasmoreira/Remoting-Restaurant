@@ -30,18 +30,21 @@ namespace Worker
             evRepeater = new OperationEventRepeater();
             evRepeater.operationEvent += new OperationDelegate(NewServerNotification);
 
-            if (args[0].Equals("-b"))
-            {
-                ordersServer.barEvent += new OperationDelegate(evRepeater.Repeater);
-                this.location = Locations.Bar;
-            }
-            else if (args[0].Equals("-k"))
-            {
-                ordersServer.kitchenEvent += new OperationDelegate(evRepeater.Repeater);
-                this.location = Locations.Kitchen;
-            }
-            else
+            if (args.Count() == 0)
                 askUser = true;
+            else
+            {
+                if (args[0].Equals("-b"))
+                {
+                    ordersServer.barEvent += new OperationDelegate(evRepeater.Repeater);
+                    this.location = Locations.Bar;
+                }
+                else if (args[0].Equals("-k"))
+                {
+                    ordersServer.kitchenEvent += new OperationDelegate(evRepeater.Repeater);
+                    this.location = Locations.Kitchen;
+                }
+            }
         }
 
         public void NewServerNotification(Operations op, Order order)
@@ -197,10 +200,22 @@ namespace Worker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             if (askUser)
             {
-                //TODO criar form para perguntar se quer cozinha ou bar
+                int op = 0;
+                Inicial i = new Inicial(ref op);
+                i.ShowDialog();
+
+                if (i.op == 1)
+                {
+                    ordersServer.kitchenEvent += new OperationDelegate(evRepeater.Repeater);
+                    this.location = Locations.Kitchen;
+                }
+                else if(i.op == 2)
+                {
+                    ordersServer.barEvent += new OperationDelegate(evRepeater.Repeater);
+                    this.location = Locations.Bar;
+                }
             }
 
 
@@ -262,25 +277,30 @@ namespace Worker
                 button1.Enabled = false;
             }
             else {
-                switch (ordersServer.GetOrderById(treeView1.SelectedNode.Name).Status)
+                Order o = ordersServer.GetOrderById(treeView1.SelectedNode.Name);
+                if (o != null)
                 {
-                case OrderStatus.NotStarted:
-                    button1.Text = "Começar pedido";
-                    button1.Enabled = true;
-                    break;
-                case OrderStatus.Started:
-                    button1.Text = "Terminar pedido";
-                    button1.Enabled = true;
-                    break;
-                case OrderStatus.Finished:
-                    button1.Enabled = false;
-                    break;
-                default:
-                    break;
+                    switch (o.Status)
+                    {
+                        case OrderStatus.NotStarted:
+                            button1.Text = "Começar pedido";
+                            button1.Enabled = true;
+                            break;
+                        case OrderStatus.Started:
+                            button1.Text = "Terminar pedido";
+                            button1.Enabled = true;
+                            break;
+                        case OrderStatus.Finished:
+                            button1.Enabled = false;
+                            break;
+                        default:
+                            break;
+                    }
                 }
+                else button1.Enabled = false;
 
                 label1.Text = e.Node.Parent.Text;
-                label3.Text = ordersServer.GetTableTime(e.Node.Parent.Name);
+                label3.Text = ordersServer.GetTableTime(e.Node.Parent.Text);
             }
 
         }

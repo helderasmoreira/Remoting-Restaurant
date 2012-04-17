@@ -35,10 +35,10 @@ namespace Client
         {
             this.Text = table;
             this.label8.Text += " - " + table;
-            pricesKitchen = new double[] { 4.50, 4.00, 6.00, 7.25 };
-            pricesBar = new double[] { 5.00, 1.50, 1.00, 3.50 };
-            kitchen = new string[] { "Alheira de Mirandela", "Costeleta Grelhada", "Espetada de Porco", "Bife de Frango" };
-            bar = new string[] { "Cocktail de frutas", "Fino traçado", "Água com groselha", "Sangria" };
+            pricesKitchen = new double[] { 4.50, 4.00, 6.00, 7.25, 5.0, 6.0, 5.50, 4.5 };
+            pricesBar = new double[] { 5.00, 1.50, 1.00, 3.50, 1.0, 3.0 };
+            kitchen = new string[] { "Alheira de Mirandela", "Costeleta Grelhada", "Espetada de Porco", "Bife de Frango", "Bifinhos com cogumelos", "Francesinha", "Lasanha", "Pizza da casa" };
+            bar = new string[] { "Cocktail de frutas", "Fino traçado", "Água com groselha", "Sangria", "Coca-cola", "Martini Cola"  };
                 
         }
 

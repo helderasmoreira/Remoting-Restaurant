@@ -33,3 +33,10 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\bin\Debug\Shared.pdb
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\obj\Debug\ResolveAssemblyReference.cache
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\obj\Debug\OrderMap.dll
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\obj\Debug\OrderMap.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\bin\Debug\OrderMap.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\bin\Debug\OrderMap.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\bin\Debug\Shared.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\bin\Debug\Shared.pdb
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\obj\Debug\ResolveAssemblyReference.cache
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\obj\Debug\OrderMap.dll
+\\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\obj\Debug\OrderMap.pdb

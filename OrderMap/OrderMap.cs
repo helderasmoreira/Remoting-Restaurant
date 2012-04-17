@@ -45,8 +45,12 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
     {
 
         Console.WriteLine("AddOrder called!");
-        if(order.Price >= 0.0)
-            orders[order.Location][order.Table].Add(order);
+        if (order.Price >= 0.0)
+        {
+            if (orders[order.Location].ContainsKey(order.Table))
+                orders[order.Location][order.Table].Add(order);
+            else return;
+        }
         else if (order.Price == -1.0)
         {
             List<Order> l = new List<Order>();
@@ -58,7 +62,7 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
             NotifyWorkers(Operations.NewOrder, order, kitchenEvent);
             return;
         }
-        else if(order.Price == -2.0)
+        else if (order.Price == -2.0)
         {
             orders[Locations.Bar].Remove(order.Table);
             orders[Locations.Kitchen].Remove(order.Table);
@@ -151,7 +155,16 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
             if(orders[loc].ContainsKey(table))
                 l.Add(orders[loc][table]);
         }
-        return l.SelectMany(x => x).ToList();    
+        List<Order> temp;
+        try
+        {
+            temp = l.SelectMany(x => x).ToList();
+        }
+        catch (Exception e)
+        {
+             return GetOrdersByTable(table);
+        }
+        return temp;    
     }
 
     public double GetTableCheck(string table)
