@@ -222,11 +222,12 @@ namespace Client
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
             ArrayList newOrder = new ArrayList();
-            AddOrder ao = new AddOrder(ref newOrder, treeView1.SelectedNode.Name);
+            AddOrder ao = new AddOrder(ref newOrder, treeView1.SelectedNode.Text);
             ao.ShowDialog();
-            
-            
-            //adicionar cada order no newOrder ao objeto remoto como normalmente
+
+            foreach (Order o in newOrder)
+                ordersServer.AddOrder(o);
+           
         }
 
         private void TreeView1_AfterSelect(System.Object sender,
@@ -308,7 +309,10 @@ namespace Client
                 foreach(TreeNode t in treeView1.Nodes)
                 {
                     if (t.Text.Equals(mesa))
+                    {
+                        MessageBox.Show("A mesa já existe!", "Aviso");
                         return; 
+                    }
                 }
 
                 Order o = new Order(DateTime.Now, mesa, 1, -1.0, mesa, OrderStatus.NotStarted, Locations.Bar);

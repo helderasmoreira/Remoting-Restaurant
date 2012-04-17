@@ -28,33 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.udQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnNovoPedido = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.cbDescricao = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.descricao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.preco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.udQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.udQuantidade)).BeginInit();
             this.panel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -122,13 +129,16 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Moccasin;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.radioButton2);
+            this.panel5.Controls.Add(this.radioButton1);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.udQuantidade);
             this.panel5.Controls.Add(this.btnNovoPedido);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.cbTipo);
             this.panel5.Controls.Add(this.cbDescricao);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 3);
@@ -136,42 +146,27 @@
             this.panel5.Size = new System.Drawing.Size(226, 333);
             this.panel5.TabIndex = 1;
             // 
-            // udQuantidade
+            // button1
             // 
-            this.udQuantidade.Location = new System.Drawing.Point(19, 119);
-            this.udQuantidade.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.udQuantidade.Name = "udQuantidade";
-            this.udQuantidade.Size = new System.Drawing.Size(62, 20);
-            this.udQuantidade.TabIndex = 10;
-            this.udQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.udQuantidade.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(73, 288);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 37);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Concluir pedido";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnNovoPedido
             // 
-            this.btnNovoPedido.Location = new System.Drawing.Point(16, 161);
+            this.btnNovoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoPedido.Location = new System.Drawing.Point(16, 165);
             this.btnNovoPedido.Name = "btnNovoPedido";
-            this.btnNovoPedido.Size = new System.Drawing.Size(123, 23);
+            this.btnNovoPedido.Size = new System.Drawing.Size(146, 37);
             this.btnNovoPedido.TabIndex = 2;
             this.btnNovoPedido.Text = "Adicionar pedido";
             this.btnNovoPedido.UseVisualStyleBackColor = true;
             this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Quantidade:";
             // 
             // label5
             // 
@@ -191,18 +186,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Descrição:";
             // 
-            // cbTipo
-            // 
-            this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Items.AddRange(new object[] {
-            "Cozinha",
-            "Bar"});
-            this.cbTipo.Location = new System.Drawing.Point(16, 36);
-            this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(119, 21);
-            this.cbTipo.TabIndex = 8;
-            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
-            // 
             // cbDescricao
             // 
             this.cbDescricao.FormattingEnabled = true;
@@ -210,6 +193,7 @@
             this.cbDescricao.Name = "cbDescricao";
             this.cbDescricao.Size = new System.Drawing.Size(168, 21);
             this.cbDescricao.TabIndex = 3;
+            this.cbDescricao.SelectedIndexChanged += new System.EventHandler(this.cbDescricao_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -227,6 +211,7 @@
             this.descricao,
             this.quantidade,
             this.preco});
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
@@ -238,6 +223,11 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // tipo
+            // 
+            this.tipo.Text = "Tipo";
+            this.tipo.Width = 45;
+            // 
             // descricao
             // 
             this.descricao.Text = "Descrição";
@@ -248,24 +238,92 @@
             this.quantidade.Text = "Qtd";
             this.quantidade.Width = 30;
             // 
-            // tipo
-            // 
-            this.tipo.Text = "Tipo";
-            // 
             // preco
             // 
-            this.preco.Text = "Preço";
-            this.preco.Width = 50;
+            this.preco.Text = "Preço (€)";
+            this.preco.Width = 65;
             // 
-            // button1
+            // contextMenuStrip1
             // 
-            this.button1.Location = new System.Drawing.Point(95, 302);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Concluir pedido";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 26);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(19, 32);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(63, 17);
+            this.radioButton1.TabIndex = 12;
+            this.radioButton1.Text = "Cozinha";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(86, 32);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(41, 17);
+            this.radioButton2.TabIndex = 13;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Bar";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(180, 135);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "- €";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Quantidade:";
+            // 
+            // udQuantidade
+            // 
+            this.udQuantidade.Location = new System.Drawing.Point(19, 128);
+            this.udQuantidade.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.udQuantidade.Name = "udQuantidade";
+            this.udQuantidade.Size = new System.Drawing.Size(62, 20);
+            this.udQuantidade.TabIndex = 10;
+            this.udQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.udQuantidade.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(124, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Preço unitário:";
             // 
             // AddOrder
             // 
@@ -273,6 +331,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 389);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "AddOrder";
             this.Text = "Adicionar Pedido";
             this.Load += new System.EventHandler(this.AddOrder_Load);
@@ -283,8 +343,9 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.udQuantidade)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.udQuantidade)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,12 +358,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.NumericUpDown udQuantidade;
         private System.Windows.Forms.Button btnNovoPedido;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.ComboBox cbDescricao;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView1;
@@ -311,5 +369,13 @@
         private System.Windows.Forms.ColumnHeader tipo;
         private System.Windows.Forms.ColumnHeader preco;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown udQuantidade;
+        private System.Windows.Forms.Label label4;
     }
 }
