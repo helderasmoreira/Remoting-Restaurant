@@ -19,13 +19,6 @@ C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMa
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\OrderMap.dll
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\OrderMap\obj\Debug\OrderMap.pdb
-C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\bin\Debug\OrderMap.dll
-C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\bin\Debug\OrderMap.pdb
-C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\bin\Debug\Shared.dll
-C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\bin\Debug\Shared.pdb
-C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\obj\Debug\OrderMap.dll
-C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\obj\Debug\OrderMap.pdb
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\bin\Debug\OrderMap.dll
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\bin\Debug\OrderMap.pdb
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\bin\Debug\Shared.dll
@@ -40,3 +33,10 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\OrderMap\obj\Debug\OrderMap.pdb
 \\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\obj\Debug\ResolveAssemblyReference.cache
 \\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\obj\Debug\OrderMap.dll
 \\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\OrderMap\obj\Debug\OrderMap.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\bin\Debug\OrderMap.dll
+C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\bin\Debug\OrderMap.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\bin\Debug\Shared.dll
+C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\bin\Debug\Shared.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\obj\Debug\OrderMap.dll
+C:\Users\Babo\Desktop\Remoting-Restaurant\OrderMap\obj\Debug\OrderMap.pdb

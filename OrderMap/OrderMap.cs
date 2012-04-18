@@ -20,7 +20,6 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
 
         this.orders = new Dictionary<Locations, Dictionary<String, List<Order>>>();
 
-        //dados de teste
         Dictionary<String, List<Order>> bar = new Dictionary<String, List<Order>>();
         Dictionary<String, List<Order>> kitchen = new Dictionary<String, List<Order>>();
         for (int i = 0; i < 10; i++)
@@ -83,7 +82,6 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
                 NotifyWorkers(Operations.NewOrder, order, kitchenEvent);
                 break;
         }
- 
     }
 
     public void StartOrder(string orderId)
@@ -132,7 +130,6 @@ public class OrderMap : MarshalByRefObject, IOrderMap {
 
     public Order GetOrderById(string id)
     {
-        //TODO return order with given id (à não trolha)
         foreach (Dictionary<string, List<Order>> location in orders.Values)
             foreach (List<Order> table in location.Values)
                 foreach(Order o in table)

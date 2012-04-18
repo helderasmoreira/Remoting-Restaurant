@@ -10,18 +10,6 @@ C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Worker\
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Worker\bin\Debug\Shared.pdb
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Worker\obj\x86\Debug\Worker.exe
 C:\Users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-1724049\Worker\obj\x86\Debug\Worker.pdb
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Worker.exe.config
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.exe
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.pdb
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Worker.exe
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Worker.pdb
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Shared.dll
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Shared.pdb
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.Worker.resources
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.Properties.Resources.resources
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\bin\Debug\Worker.exe.config
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\bin\Debug\Worker.exe
 D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\bin\Debug\Worker.pdb
@@ -47,3 +35,16 @@ D:\FEUP - MIEIC\4º Ano\TDIN\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.pdb
 \\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\GenerateResource.read.1.tlog
 \\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\GenerateResource.write.1.tlog
 \\hvfs.feupsig.fe.up.pt\users\ei08118\Desktop\heldersantosmoreira-Remoting-Restaurant-541ea0d\Worker\obj\x86\Debug\Worker.Inicial.resources
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Worker.exe.config
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Worker.exe
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Worker.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Shared.dll
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\bin\Debug\Shared.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.Inicial.resources
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.Properties.Resources.resources
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.exe
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.pdb
+C:\Users\Babo\Desktop\Remoting-Restaurant\Worker\obj\x86\Debug\Worker.Worker.resources

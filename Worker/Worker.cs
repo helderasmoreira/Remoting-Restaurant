@@ -225,7 +225,7 @@ namespace Worker
                     label8.Text = "Bar";
                     break;
                 case Locations.Kitchen:
-                    label8.Text = "Kitchen";
+                    label8.Text = "Cozinha";
                     break;
                 default:
                     break;

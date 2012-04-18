@@ -111,7 +111,7 @@ public interface IOrderMap {
 
 }
 
-public enum Operations { NewOrder, Checkout, Started, Finished, Removed };
+public enum Operations { NewOrder, Started, Finished, Removed };
 
 public enum OrderStatus { NotStarted, Started, Finished };
 

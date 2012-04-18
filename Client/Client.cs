@@ -28,7 +28,6 @@ namespace Client
             evRepeater = new OperationEventRepeater();
             evRepeater.operationEvent += new OperationDelegate(NewServerNotification);
             ordersServer.clientEvent += new OperationDelegate(evRepeater.Repeater);
-
         }
 
         private void Client_Load(object sender, EventArgs e)

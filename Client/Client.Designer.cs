@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Mesa 1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Mesa 2");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Mesa 3");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Mesa 4");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Mesa 5");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Mesa 6");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Mesa 7");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Mesa 8");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Mesa 9");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Mesa 10");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Mesa 1");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Mesa 2");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Mesa 3");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Mesa 4");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Mesa 5");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Mesa 6");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Mesa 7");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Mesa 8");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Mesa 9");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Mesa 10");
             this.btnNovoPedido = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -177,37 +177,37 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "Mesa 1";
-            treeNode2.Name = "Node1";
-            treeNode2.Text = "Mesa 2";
-            treeNode3.Name = "Node2";
-            treeNode3.Text = "Mesa 3";
-            treeNode4.Name = "Node3";
-            treeNode4.Text = "Mesa 4";
-            treeNode5.Name = "Node4";
-            treeNode5.Text = "Mesa 5";
-            treeNode6.Name = "Node5";
-            treeNode6.Text = "Mesa 6";
-            treeNode7.Name = "Node6";
-            treeNode7.Text = "Mesa 7";
-            treeNode8.Name = "Node7";
-            treeNode8.Text = "Mesa 8";
-            treeNode9.Name = "Node8";
-            treeNode9.Text = "Mesa 9";
-            treeNode10.Name = "Node9";
-            treeNode10.Text = "Mesa 10";
+            treeNode11.Name = "Node0";
+            treeNode11.Text = "Mesa 1";
+            treeNode12.Name = "Node1";
+            treeNode12.Text = "Mesa 2";
+            treeNode13.Name = "Node2";
+            treeNode13.Text = "Mesa 3";
+            treeNode14.Name = "Node3";
+            treeNode14.Text = "Mesa 4";
+            treeNode15.Name = "Node4";
+            treeNode15.Text = "Mesa 5";
+            treeNode16.Name = "Node5";
+            treeNode16.Text = "Mesa 6";
+            treeNode17.Name = "Node6";
+            treeNode17.Text = "Mesa 7";
+            treeNode18.Name = "Node7";
+            treeNode18.Text = "Mesa 8";
+            treeNode19.Name = "Node8";
+            treeNode19.Text = "Mesa 9";
+            treeNode20.Name = "Node9";
+            treeNode20.Text = "Mesa 10";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10});
+            treeNode11,
+            treeNode12,
+            treeNode13,
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18,
+            treeNode19,
+            treeNode20});
             this.treeView1.Size = new System.Drawing.Size(200, 299);
             this.treeView1.TabIndex = 5;
             // 
@@ -367,7 +367,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Client";
-            this.Text = "Cliente Sala";
             this.Load += new System.EventHandler(this.Client_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
